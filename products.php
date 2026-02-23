@@ -33,20 +33,20 @@
             </div>
             
             <!-- Main Content Area -->
-            <div class="shop-page-wrapper section-space--ptb_100">
+            <div class="shop-page-wrapper section-space--ptb_30">
                 <div class="container-fluid">
                     <div class="row">
                         <!-- Left Sidebar (Technical Filters) - Hidden on mobile/tablet -->
                         <div class="col-lg-3 d-none d-lg-block">
-                            <div class="sidebar-wrap" style="position: sticky; top: 20px;">
+                            <div class="sidebar-wrap" style="position: sticky; top: 20px; max-height: calc(100vh - 40px); overflow-y: auto; padding-right: 10px;">
                                 
                                 <!-- Category Accordion -->
-                                <div class="widget widget_categories">
+                                <div class="widget widget_categories" style="padding: 15px;">
                                     <h5 class="widget-title">Product Categories</h5>
                                     <ul class="category-list">
                                         <?php
                                         include 'includes/conneaction.php';
-                                        $categories_query = mysqli_query($con, "SELECT * FROM categories WHERE status = 'active'");
+                                        $categories_query = mysqli_query($con, "SELECT * FROM categories WHERE status = 'active' ORDER BY priority ASC, category_name ASC");
                                         while ($cat = mysqli_fetch_assoc($categories_query)) {
                                             $sub_query = mysqli_query($con, "SELECT * FROM sub_categories WHERE category_id = " . $cat['id'] . " AND status = 'active'");
                                             $has_sub = mysqli_num_rows($sub_query) > 0;
@@ -89,6 +89,9 @@
                                         ?>
                                     </ul>
                                     <style>
+                                        .sidebar-wrap::-webkit-scrollbar { width: 5px; }
+                                        .sidebar-wrap::-webkit-scrollbar-track { background: #f1f1f1; }
+                                        .sidebar-wrap::-webkit-scrollbar-thumb { background: #00356b; border-radius: 10px; }
                                         .category-list, .category-list ul { list-style: none; padding-left: 0; }
                                         .cat-header { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #f0f0f0; }
                                         .cat-link { color: #333; font-weight: 500; text-decoration: none; flex-grow: 1; }
@@ -309,66 +312,87 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="shop-product-wrap list" style="max-width: 100%;">
-                                <?php
-                                if (mysqli_num_rows($prod_res) > 0) {
-                                    while ($prod = mysqli_fetch_assoc($prod_res)) {
-                                        ?>
-                                        <!-- Product Row -->
-                                        <div class="product-row p-4 mb-4" style="border: 1px solid #eaeaea; background: #fff; border-radius: 8px;">
-                                            <div class="row align-items-center">
-                                                <div class="col-lg-3 col-md-4 col-12 mb-3 mb-md-0">
-                                                    <div class="product-image text-center" style="padding: 10px;">
-                                                        <img src="<?php echo $prod['image1']; ?>" class="img-fluid" alt="<?php echo htmlspecialchars($prod['product_name']); ?>" style="max-height: 200px; width: auto; object-fit: contain;">
-                                                        <div class="product-sku text-muted extra-small mt-2" style="font-size: 11px;">SKU: <?php echo htmlspecialchars($prod['sku']); ?></div>
+                            <div class="shop-product-wrap grid" style="max-width: 100%;">
+                                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-2 g-4">
+                                    <?php
+                                    if (mysqli_num_rows($prod_res) > 0) {
+                                        while ($prod = mysqli_fetch_assoc($prod_res)) {
+                                            ?>
+                                            <div class="col mb-3">
+                                                <!-- Product Grid Card -->
+                                                <div class="product-grid-card h-100 d-flex flex-column" style="border: 1px solid #eee; background: #fff; border-radius: 12px; transition: all 0.3s ease; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.04);">
+                                                    <div class="product-image-wrapper" style="position: relative; aspect-ratio: 0/0; background: #f9f9f9; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+                                                        <a href="product-details.php?id=<?php echo $prod['id']; ?>" class="w-100 h-100 d-flex align-items-center justify-content-center">
+                                                            <img src="<?php echo $prod['image1']; ?>" class="img-fluid" alt="<?php echo htmlspecialchars($prod['product_name']); ?>" style="max-height: 90%; max-width: 90%; width: auto; height: auto; object-fit: contain;">
+                                                        </a>
+                                                        <div class="sku-tag" style="position: absolute; top: 10px; right: 10px; font-size: 8px; background: rgba(255,255,255,0.9); padding: 2px 6px; border-radius: 4px; border: 1px solid #efefef; z-index: 1;">SKU: <?php echo htmlspecialchars($prod['sku']); ?></div>
                                                     </div>
-                                                </div>
-                                                
-                                                <div class="col-lg-6 col-md-5 col-12">
-                                                    <div class="product-info-wrap px-lg-3">
-                                                        <h6 class="product-title mb-2" style="font-size: 18px; line-height: 1.4;">
-                                                            <a href="product-details.php?id=<?php echo $prod['id']; ?>" class="text-decoration-none text-dark fw-bold"><?php echo htmlspecialchars($prod['product_name']); ?></a>
-                                                        </h6>
-                                                        <div class="product-brand mb-2">
-                                                            <span class="badge bg-light text-dark border" style="font-weight: 500;">Brand: <?php echo htmlspecialchars($prod['brand_name']); ?></span>
-                                                        </div>
-                                                        <div class="product-specs text-muted small" style="line-height: 1.6;">
-                                                            <?php echo (strlen(strip_tags($prod['short_technical_specifications'])) > 150) ? substr(strip_tags($prod['short_technical_specifications']), 0, 150) . '...' : $prod['short_technical_specifications']; ?>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                
-                                                <div class="col-lg-3 col-md-3 col-12 text-lg-end text-md-end text-center">
-                                                    <div class="action-wrap p-3" style="border-left: 1px solid #f0f0f0;">
-                                                        <div class="price mb-3">
-                                                            <span class="current-price h4 text-primary" data-base-price="<?php echo $prod['price']; ?>" style="font-weight: 800; color: #00356b !important;">Rs. <?php echo number_format($prod['price'], 2); ?></span>
-                                                        </div>
-                                                        <div class="quantity-selector mb-3 d-inline-block">
-                                                            <div class="quantity-input">
-                                                                <button class="qty-btn quantity-decrease">-</button>
-                                                                <input type="text" value="1" class="quantity-number" readonly>
-                                                                <button class="qty-btn quantity-increase">+</button>
+                                                    
+                                                    <div class="product-details-content p-3 flex-grow-1 d-flex flex-column" style="background: #fff;">
+                                                        <div class="d-flex justify-content-between align-items-center mb-1">
+                                                            <div class="brand-label">
+                                                                <span class="text-primary fw-bold" style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.8px;"><?php echo htmlspecialchars($prod['brand_name']); ?></span>
+                                                            </div>
+                                                            <div class="stock-status-badge">
+                                                                <?php
+                                                                $status = $prod['stock_status'];
+                                                                $badge_style = 'background: #28a745; color: #fff;'; // Available
+                                                                if ($status == 'Limited Stock') $badge_style = 'background: #ffc107; color: #000;';
+                                                                if ($status == 'Out of Stock') $badge_style = 'background: #dc3545; color: #fff;';
+                                                                ?>
+                                                                <span style="font-size: 8px; font-weight: 700; padding: 2px 6px; border-radius: 10px; text-transform: uppercase; <?php echo $badge_style; ?>">
+                                                                    <?php echo $status; ?>
+                                                                </span>
                                                             </div>
                                                         </div>
-                                                        <div class="d-grid gap-2">
-                                                            <button class="btn add-to-cart-btn" onclick="addToCart({id: <?php echo $prod['id']; ?>, title: '<?php echo addslashes($prod['product_name']); ?>', sku: '<?php echo addslashes($prod['sku']); ?>', price: <?php echo $prod['price']; ?>, image: '<?php echo $prod['image1']; ?>', qty: this.closest('.action-wrap').querySelector('.quantity-number').value})">
-                                                                <i class="fas fa-shopping-cart"></i> ADD TO CART
-                                                            </button>
-                                                            <a href="product-details.php?id=<?php echo $prod['id']; ?>" class="btn btn-buy-now">
-                                                                <i class="fas fa-bolt"></i> BUY NOW
-                                                            </a>
+                                                        <h6 class="product-name-heading mb-2" style="font-size: 13.5px; line-height: 1.4; height: 38px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; margin-top: 2px;">
+                                                            <a href="product-details.php?id=<?php echo $prod['id']; ?>" class="text-decoration-none text-dark hover-blue"><?php echo htmlspecialchars($prod['product_name']); ?></a>
+                                                        </h6>
+                                                        <div class="price-section mt-auto mb-2 text-center">
+                                                            <?php if (isset($prod['mrp']) && $prod['mrp'] > $prod['price']): ?>
+                                                                <span class="mrp-val mr-2 text-muted" style="text-decoration: line-through; font-size: 13px;">Rs. <?php echo number_format($prod['mrp'], 2); ?></span>
+                                                            <?php endif; ?>
+                                                            <div class="current-price-val d-inline-block" style="font-weight: 800; font-size: 16px; color: #00356b;">Rs. <?php echo number_format($prod['price'], 2); ?></div>
+                                                        </div>
+
+                                                        <!-- Quantity Selector -->
+                                                        <div class="quantity-wrapper mb-3 d-flex justify-content-center">
+                                                            <div class="quantity-input d-flex align-items-center" style="border: 1px solid #ddd; border-radius: 4px; overflow: hidden;">
+                                                                <button class="qty-btn quantity-decrease" style="border: none; background: #f8f9fa; padding: 2px 10px; font-weight: bold;">-</button>
+                                                                <input type="number" min="1" value="1" class="quantity-number text-center" style="width: 45px; border: none; font-size: 12px; font-weight: 600; background: transparent; -moz-appearance: textfield;">
+                                                                <button class="qty-btn quantity-increase" style="border: none; background: #f8f9fa; padding: 2px 10px; font-weight: bold;">+</button>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <div class="grid-actions-group">
+                                                            <div class="row g-2">
+                                                                <div class="col-12">
+                                                                    <button class="btn btn-primary btn-sm w-100 py-2 d-flex align-items-center justify-content-center gap-2" style="background: #00356b; border: none; font-size: 11px; font-weight: 700; border-radius: 6px;" onclick="addToCart({id: <?php echo $prod['id']; ?>, title: '<?php echo addslashes($prod['product_name']); ?>', sku: '<?php echo addslashes($prod['sku']); ?>', price: <?php echo $prod['price']; ?>, image: '<?php echo $prod['image1']; ?>', qty: this.closest('.product-details-content').querySelector('.quantity-number').value})">
+                                                                        <i class="fas fa-shopping-cart"></i> ADD TO CART
+                                                                    </button>
+                                                                </div>
+                                                                <div class="col-12">
+                                                                    <a href="product-details.php?id=<?php echo $prod['id']; ?>" class="btn btn-warning btn-sm w-100 py-2 d-flex align-items-center justify-content-center gap-2" style="background: #ff9f00; color: #fff; border: none; font-size: 11px; font-weight: 700; border-radius: 6px;">
+                                                                        <i class="fas fa-bolt"></i> BUY NOW
+                                                                    </a>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <?php
+                                            <?php
+                                        }
+                                    } else {
+                                        echo "<div class='col-12 text-center'><div class='alert alert-info py-4'>No products found matching your catalog.</div></div>";
                                     }
-                                } else {
-                                    echo "<div class='alert alert-info'>No products found matching your criteria.</div>";
-                                }
-                                ?>
+                                    ?>
+                                </div>
                             </div>
+                            <style>
+                                .hover-blue:hover { color: #00356b !important; }
+                                .product-grid-card:hover { transform: translateY(-5px); box-shadow: 0 8px 24px rgba(0,0,0,0.08) !important; border-color: #00356b !important; }
+                            </style>
                             
                             <!-- Pagination -->
                             <div class="page-pagination section-space--mt_60 text-center">
@@ -723,25 +747,45 @@
                 display: none !important;
             }
         }
+        /* Hide standard spinners */
+        input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button { 
+            -webkit-appearance: none; 
+            margin: 0; 
+        }
     </style>
 
     <script>
         // Quantity selector functionality
         document.querySelectorAll('.quantity-decrease').forEach(button => {
             button.addEventListener('click', function() {
-                const input = this.nextElementSibling;
-                let value = parseInt(input.value);
+                const input = this.closest('.quantity-input').querySelector('.quantity-number');
+                let value = parseInt(input.value) || 1;
                 if(value > 1) {
                     input.value = value - 1;
+                    input.dispatchEvent(new Event('change'));
                 }
             });
         });
         
         document.querySelectorAll('.quantity-increase').forEach(button => {
             button.addEventListener('click', function() {
-                const input = this.previousElementSibling;
-                let value = parseInt(input.value);
+                const input = this.closest('.quantity-input').querySelector('.quantity-number');
+                let value = parseInt(input.value) || 0;
                 input.value = value + 1;
+                input.dispatchEvent(new Event('change'));
+            });
+        });
+
+        document.querySelectorAll('.quantity-number').forEach(input => {
+            input.addEventListener('change', function() {
+                let value = parseInt(this.value);
+                if (isNaN(value) || value < 1) {
+                    this.value = 1;
+                }
+            });
+            input.addEventListener('keyup', function() {
+                this.dispatchEvent(new Event('change'));
             });
         });
         

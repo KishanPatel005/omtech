@@ -56,7 +56,7 @@
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-md-6 text-center text-md-start">
-                            <span class="copyright-text">&copy; 2026 OM Technomation. <a href="https://omactuo.com/">All Rights Reserved.</a></span>
+                            <span class="copyright-text">&copy; 2026 <strong>OMACTUO</strong>. All Rights Reserved. | <a href="http://creativewebcrafters.in/" target="_blank">Designed & Developed by CreativeWebCrafters</a></span>
                         </div>
                         <div class="col-md-6 text-center text-md-end">
                             <ul class="list ht-social-networks solid-rounded-icon">

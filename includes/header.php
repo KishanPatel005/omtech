@@ -87,6 +87,13 @@
   </div>
 </div>        <!-- Header Top Wrap End -->
 <style>
+    body {
+        font-size: 95% !important;
+    }
+        
+        /* html, body, h1, h2, h3, h4, h5, h6, h1 span, h2 span, h3 span, h4 span, h5 span, h6 span, p, a, span, button, input, label {
+        font-size: 95% !important; */
+    /* } */
     .top-message {
   word-wrap: break-word;
   overflow-wrap: break-word;
@@ -265,11 +272,17 @@
             </div>
         </div>
         <div class="cart-sidebar-footer">
-            <div class="cart-total">
-                <span>Total:</span>
-                <span class="cart-total-amount" id="cart-total">Rs. 0.00</span>
+            <!-- 2x font size -->
+            <div class="cart-total ">
+                <span  style="font-size: 20px;" >Total:</span>
+                <span class="cart-total-amount" id="cart-total"  style="font-size: 20px;">Rs. 0.00</span>
             </div>
-            <button class="btn btn-primary w-100 buy-now-btn" onclick="checkout()">Buy Now</button>
+        <button 
+  class="btn btn-primary w-100 buy-now-btn d-flex align-items-center justify-content-center"
+  onclick="checkout()"
+  name="buy-now">
+  BUY NOW
+</button>
         </div>
     </div>
 
@@ -619,12 +632,18 @@
         /* Sticky Contact Buttons */
         .sticky-contact-wrapper {
             position: fixed;
-            bottom: 30px;
+            bottom: 130px;
             right: 30px;
             display: flex;
             flex-direction: column;
             gap: 15px;
             z-index: 9999;
+            transition: all 0.3s ease;
+        }
+        body.cart-active .sticky-contact-wrapper {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
         }
         .sticky-btn {
             width: 55px;
@@ -662,7 +681,7 @@
         }
         @media (max-width: 768px) {
             .sticky-contact-wrapper {
-                bottom: 20px;
+                bottom: 130px;
                 right: 20px;
                 gap: 10px;
             }
@@ -779,12 +798,14 @@
             document.getElementById('cart-sidebar').classList.add('active');
             document.getElementById('cart-sidebar-overlay').classList.add('active');
             document.body.style.overflow = 'hidden';
+            document.body.classList.add('cart-active');
         }
         
         function closeCartSidebar() {
             document.getElementById('cart-sidebar').classList.remove('active');
             document.getElementById('cart-sidebar-overlay').classList.remove('active');
             document.body.style.overflow = '';
+            document.body.classList.remove('cart-active');
         }
         
         function addToCart(product) {
@@ -868,6 +889,16 @@
                 }
             }
         }
+
+        function setQuantity(productId, newValue) {
+            const item = cart.find(item => item.id === productId);
+            if (item) {
+                let val = parseInt(newValue);
+                if (isNaN(val) || val <= 0) val = 1;
+                item.qty = val;
+                updateCartDisplay();
+            }
+        }
         
         function updateCartDisplay() {
             const cartItemsContainer = document.getElementById('cart-items');
@@ -905,7 +936,9 @@
                                 <div class="cart-item-price">${symbol}${(item.price * rate).toFixed(2)}</div>
                                 <div class="cart-item-qty">
                                     <button class="cart-qty-btn" onclick="updateQuantity(${item.id}, -1)">-</button>
-                                    <span class="cart-qty-value">${item.qty}</span>
+                                    <input type="number" min="1" class="cart-qty-input" value="${item.qty}" 
+                                        onchange="setQuantity(${item.id}, this.value)" 
+                                        style="width: 45px; text-align: center; border: 1px solid #ddd; border-radius: 4px; margin: 0 5px; font-size: 13px; font-weight: 600; -moz-appearance: textfield;">
                                     <button class="cart-qty-btn" onclick="updateQuantity(${item.id}, 1)">+</button>
                                 </div>
                                 <button class="cart-item-remove" onclick="removeFromCart(${item.id})">Remove</button>

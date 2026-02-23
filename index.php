@@ -47,21 +47,21 @@
                             <!-- Slide 1 -->
                             <div class="swiper-slide">
                                 <div class="hero-image-only">
-                                    <img src="https://picsum.photos/1920/1080?random=1" alt="Slider Image 1">
+                                    <img src="https://www.discoverengineering.org/wp-content/uploads/2023/12/mj_11329_1.jpg" alt="Slider Image 1">
                                 </div>
                             </div>
                             
                             <!-- Slide 2 -->
                             <div class="swiper-slide">
                                 <div class="hero-image-only">
-                                    <img src="https://picsum.photos/1920/1080?random=2" alt="Slider Image 2">
+                                    <img src="https://www.discoverengineering.org/wp-content/uploads/2023/12/mj_11344_3.jpg" alt="Slider Image 2">
                                 </div>
                             </div>
                             
                             <!-- Slide 3 -->
                             <div class="swiper-slide">
                                 <div class="hero-image-only">
-                                    <img src="https://picsum.photos/1920/1080?random=3" alt="Slider Image 3">
+                                    <img src="https://www.chitkara.edu.in/blogs/wp-content/uploads/2022/01/mech-image.jpg" alt="Slider Image 3">
                                 </div>
                             </div>
                         </div>
@@ -427,6 +427,31 @@
             <!--====================  testimonial section ====================-->
             <!--====================  testimonial section Start ====================-->
             <div class="testimonial-slider-area section-space--ptb_120 bg-gray-3">
+                <style>
+                    @media (max-width: 575px) {
+                        .testimonial-slider__single {
+                            padding: 25px 20px !important;
+                            text-align: center !important;
+                        }
+                        .author-info {
+                            flex-direction: column;
+                            align-items: center !important;
+                            gap: 15px !important;
+                            text-align: center !important;
+                        }
+                        .testimonial-slider__media {
+                            margin: 0 auto !important;
+                        }
+                        .testimonial-slider__media img {
+                            width: 60px !important;
+                            height: 60px !important;
+                        }
+                        .testimonial-rating {
+                            justify-content: center;
+                            display: flex;
+                        }
+                    }
+                </style>
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
@@ -447,7 +472,7 @@
                                             while($testi = mysqli_fetch_assoc($testi_res)):
                                         ?>
                                         <div class="swiper-slide list-item">
-                                            <div class="testimonial-slider__single wow move-up" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; padding: 40px; background: #fff; border-radius: 5px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); margin: 10px;">
+                                            <div class="testimonial-slider__single" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; padding: 30px; background: #fff; border-radius: 5px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); margin-bottom: 30px;">
                                                 <div>
                                                     <div class="testimonial-rating mb-15">
                                                         <?php 
@@ -475,7 +500,7 @@
                                             for($k=0; $k<3; $k++):
                                         ?>
                                         <div class="swiper-slide list-item">
-                                            <div class="testimonial-slider__single wow move-up" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; padding: 40px; background: #fff; border-radius: 5px; margin: 10px;">
+                                            <div class="testimonial-slider__single" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; padding: 30px; background: #fff; border-radius: 5px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); margin-bottom: 30px;">
                                                 <div>
                                                     <div class="testimonial-rating mb-15"><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i></div>
                                                     <h6 class="testimonial-subject mb-15">Quality industrial automation solutions</h6>
@@ -498,14 +523,14 @@
             <script>
                 document.addEventListener('DOMContentLoaded', function() {
                     new Swiper('.testimonial-slider__container', {
-                        slidesPerView: 3,
+                        slidesPerView: 1,
                         spaceBetween: 30,
                         loop: true,
-                        autoplay: { delay: 2000, disableOnInteraction: false },
+                        autoplay: { delay: 3000, disableOnInteraction: false },
                         breakpoints: {
                             1200: { slidesPerView: 3 },
                             768: { slidesPerView: 2 },
-                            0: { slidesPerView: 1 }
+                            576: { slidesPerView: 1 }
                         }
                     });
                 });

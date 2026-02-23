@@ -20,13 +20,13 @@ if (isset($_POST['update_about'])) {
             $ext = pathinfo($_FILES[$field_name]['name'], PATHINFO_EXTENSION);
             $new_name = "about_" . $i . "_" . time() . "." . $ext;
             $target_file = $target_dir . $new_name;
-            
             if (move_uploaded_file($_FILES[$field_name]['tmp_name'], $target_file)) {
                 // Delete old file if exists
                 if (!empty($current_data[$field_name]) && file_exists("../" . $current_data[$field_name])) {
-                    unlink("../" . $current_data[$field_name]);
+                    @unlink("../" . $current_data[$field_name]);
                 }
-                $update_fields[] = "$field_name = 'uploads/about/$new_name'";
+                $db_path = "uploads/about/" . $new_name;
+                $update_fields[] = "$field_name = '$db_path'";
             }
         }
     }
@@ -101,3 +101,12 @@ $about = mysqli_fetch_assoc($res);
 </div>
 
 <?php include 'footer.php'; ?>
+
+<script>
+$(document).ready(function () {
+  $('.custom-file-input').on('change', function() {
+    let fileName = $(this).val().split('\\').pop();
+    $(this).next('.custom-file-label').addClass("selected").html(fileName);
+  });
+});
+</script>

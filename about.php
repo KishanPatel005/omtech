@@ -25,111 +25,51 @@ $img3 = (!empty($about_data['image3'])) ? $about_data['image3'] : "https://place
                         </div>
                     </div>
 
-                    <div class="cybersecurity-about-box">
-                        <div class="row">
-                            <div class="col-lg-5 offset-lg-1">
-                                <div class="company-images-wrapper">
-                                    <div class="row g-3">
-                                        <div class="col-6">
-                                            <div class="image-placeholder">
-                                                <img src="<?php echo $img1; ?>" alt="Company Image 1" class="img-fluid rounded">
-                                            </div>
-                                        </div>
-                                        <div class="col-6">
-                                            <div class="image-placeholder mt-4">
-                                                <img src="<?php echo $img2; ?>" alt="Company Image 2" class="img-fluid rounded">
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="image-placeholder">
-                                                <img src="<?php echo $img3; ?>" alt="Company Image 3" class="img-fluid rounded">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-
-                            <div class="col-lg-5 ms-auto">
-                                <div class="faq-wrapper">
-                                    <div id="accordion">
-                                        <div class="card">
-                                            <div class="card-header" id="headingOne">
-                                                <h5 class="mb-0">
-                                                    <button class="btn-link" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                        How can we help your business? <span> <i class="fas fa-chevron-down"></i>
-                                        <i class="fas fa-chevron-up"></i> </span>
-                                                    </button>
-                                                </h5>
-                                            </div>
-
-                                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-bs-parent="#accordion">
-                                                <div class="card-body">
-                                                    <p>Through the collaboration with customers in discussing needs and demand, we're able to attain mutual understanding, gain customer trust to offer appropriate advice, and bring about suggestions on suitable technology to transform your business. </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card">
-                                            <div class="card-header" id="headingTwo">
-                                                <h5 class="mb-0">
-                                                    <button class="btn-link collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                        What are the advantages of OMACTUO?<span> <i class="fas fa-chevron-down"></i>
-                                        <i class="fas fa-chevron-up"></i> </span>
-                                                    </button>
-                                                </h5>
-                                            </div>
-                                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-bs-parent="#accordion">
-                                                <div class="card-body">
-                                                    <p>OMACTUOtakes into consideration every little detail to make sure the system run smoothly and responsively. OMACTUOemploys a new technique called Minified Technology for securing customers' database & building up highly confidential firewalls. </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card">
-                                            <div class="card-header" id="headingThree">
-                                                <h5 class="mb-0">
-                                                    <button class="btn-link collapsed" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                                        How working process is simplified? <span> <i class="fas fa-chevron-down"></i>
-                                        <i class="fas fa-chevron-up"></i> </span>
-                                                    </button>
-                                                </h5>
-                                            </div>
-                                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-bs-parent="#accordion">
-                                                <div class="card-body">
-                                                    <p>We reduce redundant complex calculations and lengthy erroneous code texts with simpler ones to ensure OMACTUOwould run seamlessly and the design is reserved in its best form when viewed from a wide range of mobile devices & browsers. </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--=========== Founder Section Start =============-->
-                        <div class="founder-section section-space--pt_80">
+                    <div class="cybersecurity-about-box" style="background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('https://cgu-odisha.ac.in/wp-content/uploads/2023/05/mechatronics-engineering-jobs.jpg'); background-size: cover; background-position: center; background-attachment: fixed; min-height: 80vh; display: flex; align-items: center; padding: 100px 0; border-radius: 0;">
+                        <div class="container">
                             <div class="row align-items-center">
-                                <div class="col-lg-5">
-                                    <div class="founder-image">
-                                        <img src="https://placehold.co/500x600/e8e8e8/999999?text=Founder+Photo" alt="Founder" class="img-fluid rounded">
+                                <div class="col-lg-6 text-center">
+                                    <div class="company-images-wrapper">
+                                        <img src="https://img.freepik.com/free-photo/close-up-portrait-handsome-smiling-young-man-white-t-shirt-blurry-outdoor-nature_176420-6305.jpg" alt="Founder" class="shadow-lg" style="width: 70%; aspect-ratio: 1/1; object-fit: cover; border-radius: 50%; border: 8px solid #fff;">
                                     </div>
                                 </div>
-                                <div class="col-lg-6 ms-lg-5">
-                                    <div class="founder-content">
-                                        <h6 class="section-sub-title mb-15">Meet Our Founder</h6>
-                                        <h3 class="heading mb-20">A Vision for Tomorrow's Technology</h3>
-                                        <p class="mb-20">Our founder envisioned a company that bridges the gap between cutting-edge automation technology and practical industrial applications. With over two decades of experience in the automation sector, the vision has always been clear: to empower businesses with intelligent solutions that drive efficiency and growth.</p>
-                                        <p class="mb-30">"Innovation is not just about creating new technology—it's about solving real problems and making a meaningful impact on industries that shape our world."</p>
-                                        <div class="founder-signature">
-                                            <h5 class="mb-1">John Doe</h5>
-                                            <p class="text-color-primary mb-0">Founder & CEO</p>
+                                
+                                <div class="col-lg-5 ms-auto">
+                                    <div class="faq-content-wrap p-5" style="background: rgba(255,255,255,0.9); border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); backdrop-filter: blur(10px);">
+                                        <div class="faq-item">
+                                            <h5 class="heading mb-20" style="font-size: 24px; font-weight: 700; color: #00356b;">How can we help your business?</h5>
+                                            <p class="mb-3" style="font-size: 16px; line-height: 1.8;">Through the collaboration with customers in discussing needs and demand, we're able to attain mutual understanding, gain customer trust to offer appropriate advice, and bring about suggestions on suitable technology to transform your business.</p>
+                                            <p style="font-size: 16px; line-height: 1.8;">Our commitment to excellence ensures that every solution we provide is tailored to your unique requirements, driving long-term growth and operational efficiency.</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+                   
                         <!--=========== Founder Section End =============-->
 
+
+                        
                     </div>
+                         <div class="row section-space--mt_60">
+                            <div class="col-lg-4 col-md-4 mb-30">
+                                <div class="image-box">
+                                    <img src="<?php echo $img1; ?>" alt="Company Image 1" class="img-fluid rounded shadow-sm w-100" style="height: 250px; object-fit: cover;">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 mb-30">
+                                <div class="image-box">
+                                    <img src="<?php echo $img2; ?>" alt="Company Image 2" class="img-fluid rounded shadow-sm w-100" style="height: 250px; object-fit: cover;">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 mb-30">
+                                <div class="image-box">
+                                    <img src="<?php echo $img3; ?>" alt="Company Image 3" class="img-fluid rounded shadow-sm w-100" style="height: 250px; object-fit: cover;">
+                                </div>
+                            </div>
+                        </div>
+
                 </div>
             </div>
             <!--====================  Latest Blogs Section Start ====================-->
@@ -352,7 +292,48 @@ $img3 = (!empty($about_data['image3'])) ? $about_data['image3'] : "https://place
                 </div>
             </div>
             <!--============ Contact Us Area End =================-->
+            <div class="our-presence-section section-space--ptb_100">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="section-title-wrap text-center section-space--mb_40">
+                                <h3 class="heading">OUR <span class="text-color-primary">PRESENCE</span></h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="conact-info-wrap mt-30 text-center" style="background: #f8faff; padding: 30px; border-radius: 10px; border-bottom: 3px solid #00356b; height: 100%;">
+                                <h5 class="heading mb-10" style="color: #00356b; font-weight: 700;">SANDIP ENGG</h5>
+                                <div class="info-text" style="font-size: 14px; color: #555;">
+                                    <p class="mb-5">VATVA, ABAD</p>
+                                    <p class="font-weight--bold" style="color: #333;">Since 1988</p>
+                                </div>
+                            </div>
+                        </div>
 
+                        <div class="col-lg-4 col-md-6">
+                            <div class="conact-info-wrap mt-30 text-center" style="background: #f8faff; padding: 30px; border-radius: 10px; border-bottom: 3px solid #00356b; height: 100%;">
+                                <h5 class="heading mb-10" style="color: #00356b; font-weight: 700;">SUREKHA ENGG</h5>
+                                <div class="info-text" style="font-size: 14px; color: #555;">
+                                    <p class="mb-5">VATVA, ABAD</p>
+                                    <p class="font-weight--bold" style="color: #333;">Since 1974</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6">
+                            <div class="conact-info-wrap mt-30 text-center" style="background: #f8faff; padding: 30px; border-radius: 10px; border-bottom: 3px solid #00356b; height: 100%;">
+                                <h5 class="heading mb-10" style="color: #00356b; font-weight: 700;">CLIMAX ENGG</h5>
+                                <div class="info-text" style="font-size: 14px; color: #555;">
+                                    <p class="mb-5">MITHA, MEHSANA</p>
+                                    <p class="font-weight--bold" style="color: #333;">Since 2022</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
 

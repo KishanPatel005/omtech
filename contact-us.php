@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="breadcrumb_box text-center">
-                        <h2 class="breadcrumb-title">Contact us</h2>
+                        <h2 class="breadcrumb-title" style="font-size: 32px;">Contact us</h2>
                         <!-- breadcrumb-list start -->
                         <ul class="breadcrumb-list">
                             <li class="breadcrumb-item"><a href="index.php">Home</a></li>
@@ -81,65 +81,43 @@
             <!--====================  Conact us info Start ====================-->
           <div class="contact-us-info-wrappaer section-space--pb_100">
     <div class="container">
-        <div class="row align-items-center">
-            
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title-wrap text-center section-space--mb_40">
+                    <h3 class="heading">OUR <span class="text-color-primary">PRESENCE</span></h3>
+                </div>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-lg-4 col-md-6">
-                <div class="conact-info-wrap mt-30">
-                    <h5 class="heading mb-20">ABC Location 1</h5>
-                    <ul class="conact-info__list">
-                        <li>ABC Street, ABC Area, ABC City - 000000</li>
-                        <li>
-                            <a href="#" class="hover-style-link text-color-primary">
-                                abc1@abc.com
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="hover-style-link text-black font-weight--bold">
-                                +00 00000 00000
-                            </a>
-                        </li>
-                    </ul>
+                <div class="conact-info-wrap mt-30 text-center" style="background: #f8faff; padding: 30px; border-radius: 10px; border-bottom: 3px solid #00356b; height: 100%;">
+                    <h5 class="heading mb-10" style="color: #00356b; font-weight: 700;">SANDIP ENGG</h5>
+                    <div class="info-text" style="font-size: 14px; color: #555;">
+                        <p class="mb-5">VATVA, ABAD</p>
+                        <p class="font-weight--bold" style="color: #333;">Since 1988</p>
+                    </div>
                 </div>
             </div>
 
             <div class="col-lg-4 col-md-6">
-                <div class="conact-info-wrap mt-30">
-                    <h5 class="heading mb-20">ABC Location 2</h5>
-                    <ul class="conact-info__list">
-                        <li>ABC Building, ABC Road, ABC City - 000000</li>
-                        <li>
-                            <a href="#" class="hover-style-link text-color-primary">
-                                abc2@abc.com
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="hover-style-link text-black font-weight--bold">
-                                +00 00000 00001
-                            </a>
-                        </li>
-                    </ul>
+                <div class="conact-info-wrap mt-30 text-center" style="background: #f8faff; padding: 30px; border-radius: 10px; border-bottom: 3px solid #00356b; height: 100%;">
+                    <h5 class="heading mb-10" style="color: #00356b; font-weight: 700;">SUREKHA ENGG</h5>
+                    <div class="info-text" style="font-size: 14px; color: #555;">
+                        <p class="mb-5">VATVA, ABAD</p>
+                        <p class="font-weight--bold" style="color: #333;">Since 1974</p>
+                    </div>
                 </div>
             </div>
 
             <div class="col-lg-4 col-md-6">
-                <div class="conact-info-wrap mt-30">
-                    <h5 class="heading mb-20">ABC Location 3</h5>
-                    <ul class="conact-info__list">
-                        <li>ABC Tower, ABC Business Park, ABC City</li>
-                        <li>
-                            <a href="#" class="hover-style-link text-color-primary">
-                                abc3@abc.com
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="hover-style-link text-black font-weight--bold">
-                                +00 00000 00002
-                            </a>
-                        </li>
-                    </ul>
+                <div class="conact-info-wrap mt-30 text-center" style="background: #f8faff; padding: 30px; border-radius: 10px; border-bottom: 3px solid #00356b; height: 100%;">
+                    <h5 class="heading mb-10" style="color: #00356b; font-weight: 700;">CLIMAX ENGG</h5>
+                    <div class="info-text" style="font-size: 14px; color: #555;">
+                        <p class="mb-5">MITHA, MEHSANA</p>
+                        <p class="font-weight--bold" style="color: #333;">Since 2022</p>
+                    </div>
                 </div>
             </div>
-
         </div>
     </div>
 </div>

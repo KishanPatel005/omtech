@@ -15,6 +15,8 @@ if (isset($_POST['save_product'])) {
     $name = mysqli_real_escape_string($con, $_POST['product_name']);
     $sku = mysqli_real_escape_string($con, $_POST['sku']);
     $price = mysqli_real_escape_string($con, $_POST['price']);
+    $mrp = mysqli_real_escape_string($con, $_POST['mrp']);
+    $stock_status = mysqli_real_escape_string($con, $_POST['stock_status']);
     $brand = mysqli_real_escape_string($con, $_POST['brand_name']);
     $cat_id = $_POST['category_id'] ?: 'NULL';
     $sub_cat_id = $_POST['sub_category_id'] ?: 'NULL';
@@ -44,7 +46,7 @@ if (isset($_POST['save_product'])) {
 
     if ($id) {
         $sql = "UPDATE products SET 
-                product_name='$name', sku='$sku', price='$price', brand_name='$brand', 
+                product_name='$name', sku='$sku', price='$price', mrp='$mrp', stock_status='$stock_status', brand_name='$brand', 
                 category_id=$cat_id, sub_category_id=$sub_cat_id, 
                 tertiary_category_id=$ter_cat_id, short_description='$short_desc', 
                 short_technical_specifications='$short_tech', description='$desc', 
@@ -52,8 +54,8 @@ if (isset($_POST['save_product'])) {
                 image2='{$img_paths[2]}', image3='{$img_paths[3]}', image4='{$img_paths[4]}' 
                 WHERE id = $id";
     } else {
-        $sql = "INSERT INTO products (product_name, sku, price, brand_name, category_id, sub_category_id, tertiary_category_id, short_description, short_technical_specifications, description, long_specifications, image1, image2, image3, image4) 
-                VALUES ('$name', '$sku', '$price', '$brand', $cat_id, $sub_cat_id, $ter_cat_id, '$short_desc', '$short_tech', '$desc', '$long_spec', '{$img_paths[1]}', '{$img_paths[2]}', '{$img_paths[3]}', '{$img_paths[4]}')";
+        $sql = "INSERT INTO products (product_name, sku, price, mrp, stock_status, brand_name, category_id, sub_category_id, tertiary_category_id, short_description, short_technical_specifications, description, long_specifications, image1, image2, image3, image4) 
+                VALUES ('$name', '$sku', '$price', '$mrp', '$stock_status', '$brand', $cat_id, $sub_cat_id, $ter_cat_id, '$short_desc', '$short_tech', '$desc', '$long_spec', '{$img_paths[1]}', '{$img_paths[2]}', '{$img_paths[3]}', '{$img_paths[4]}')";
     }
 
     if (mysqli_query($con, $sql)) {
@@ -97,10 +99,26 @@ $brands_res = mysqli_query($con, "SELECT DISTINCT brand_name FROM products WHERE
                                     <input type="text" name="sku" class="form-control" value="<?php echo $product ? $product['sku'] : ''; ?>">
                                 </div>
                             </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label>Selling Price</label>
+                                    <input type="number" step="0.01" name="price" class="form-control" value="<?php echo $product ? $product['price'] : ''; ?>">
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label>MRP (Strike)</label>
+                                    <input type="number" step="0.01" name="mrp" class="form-control" value="<?php echo $product ? $product['mrp'] : ''; ?>">
+                                </div>
+                            </div>
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label>Price</label>
-                                    <input type="number" step="0.01" name="price" class="form-control" value="<?php echo $product ? $product['price'] : ''; ?>">
+                                    <label>Stock Status</label>
+                                    <select name="stock_status" class="form-control">
+                                        <option value="Available" <?php echo ($product && $product['stock_status'] == 'Available') ? 'selected' : ''; ?>>Available</option>
+                                        <option value="Limited Stock" <?php echo ($product && $product['stock_status'] == 'Limited Stock') ? 'selected' : ''; ?>>Limited Stock</option>
+                                        <option value="Out of Stock" <?php echo ($product && $product['stock_status'] == 'Out of Stock') ? 'selected' : ''; ?>>Out of Stock</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-md-3">

@@ -55,6 +55,7 @@ if (isset($_GET['msg']) && $_GET['msg'] == 'deleted') {
                                 <th>Product Name</th>
                                 <th>SKU</th>
                                 <th>Category</th>
+                                <th>Stock Status</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -70,6 +71,15 @@ if (isset($_GET['msg']) && $_GET['msg'] == 'deleted') {
                                 <td><?php echo $row['product_name']; ?></td>
                                 <td><?php echo $row['sku']; ?></td>
                                 <td><?php echo $row['category_name']; ?></td>
+                                <td>
+                                    <?php
+                                    $status = $row['stock_status'];
+                                    $badge_class = 'badge-success';
+                                    if ($status == 'Limited Stock') $badge_class = 'badge-warning';
+                                    if ($status == 'Out of Stock') $badge_class = 'badge-danger';
+                                    ?>
+                                    <span class="badge <?php echo $badge_class; ?>"><?php echo $status; ?></span>
+                                </td>
                                 <td>
                                     <a href="manage_products.php?id=<?php echo $row['id']; ?>" class="btn btn-warning btn-sm">Edit</a>
                                     <a href="?delete=<?php echo $row['id']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</a>
