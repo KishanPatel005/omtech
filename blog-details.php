@@ -66,7 +66,7 @@ if(!$blog) {
                             <?php endif; endfor; ?>
                         </div>
                         <?php endif; ?>
-
+<br><br>
                         <!-- Navigation -->
                         <div class="post-navigation-wrapper mt-50 border-top pt-30">
                             <div class="row">
@@ -75,11 +75,40 @@ if(!$blog) {
                                 </div>
                             </div>
                         </div>
+
+                        
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="contact-us-section-wrappaer infotechno-contact-us-bg section-space--ptb_120">
+    <div class="container">
+        <div class="row align-items-center">
+            
+            <div class="col-lg-6">
+                <div class="conact-us-wrap-one">
+                    <h3 class="heading">Optimize your production by <span class="text-color-primary">partnering</span> with our engineering experts. </h3>
+                    <div class="sub-heading">We are ready to tackle your toughest industrial challenges.<br>Contact us for a detailed feasibility analysis, system assessment, or custom automation quote.</div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="contact-info-one text-center">
+                    <div class="icon">
+                        <span class="fas fa-phone"></span>
+                    </div>
+                    <h6 class="heading font-weight--reguler">Call our technical team!</h6>
+                    <h2 class="call-us"><a href="tel:+919409944101">+91 9409944101</a></h2>
+                    <div class="contact-us-button mt-20">
+                        <a href="contact-us.php" class="btn btn--secondary">Get a Quote</a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
 </div>
 
 <?php include 'includes/footer.php'; ?>

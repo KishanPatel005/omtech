@@ -1062,22 +1062,22 @@
         "time": {
             "Days": {
                 "text": "Days",
-                "color": "#086AD8",
+                "color": "#FF5F1F",
                 "show": true
             },
             "Hours": {
                 "text": "Hours",
-                "color": "#086AD8",
+                "color": "#FF5F1F",
                 "show": true
             },
             "Minutes": {
                 "text": "Minutes",
-                "color": "#086AD8",
+                "color": "#FF5F1F",
                 "show": true
             },
             "Seconds": {
                 "text": "Seconds",
-                "color": "#086AD8",
+                "color": "#FF5F1F",
                 "show": true
             }
         }

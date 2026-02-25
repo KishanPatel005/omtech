@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 html: '<?php echo addslashes(nl2br(htmlspecialchars($popup_data['description']))); ?>',
                 icon: 'info',
                 confirmButtonText: 'GOT IT!',
-                confirmButtonColor: '#086AD8',
+                confirmButtonColor: '#FF5F1F',
                 customClass: {
                     title: 'font-weight-bold',
                     confirmButton: 'px-5 py-2 font-weight-bold'

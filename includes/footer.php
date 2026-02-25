@@ -1,56 +1,50 @@
 <div class="footer-area-wrapper bg-gray">
             <div class="footer-area section-space--ptb_80">
                 <div class="container">
-                    <div class="row footer-widget-wrapper">
-                        
-                        <div class="col-lg-4 col-md-6 col-sm-6 footer-widget">
-                            <div class="footer-widget__logo mb-30">
-                                <a href="index.php" style="color: #086AD8; font-size: 26px; font-weight: 800; text-decoration: none; letter-spacing: 0.5px; text-transform: uppercase;">
-                                    omactuo
-                                </a>
-                                </a>                            </div>
-                            <ul class="footer-widget__list">
-                                <li>OM Technomation - End-to-end industrial automation and engineering solutions.</li>
-                                <li><a href="mailto:info@omactuo.com" class="hover-style-link">info@omactuo.com</a></li>
-                                <li><a href="tel:+910000000000" class="hover-style-link text-black font-weight--bold">+91 00000 00000</a></li>
-                                <li><a href="https://omactuo.com/" class="hover-style-link text-color-primary">www.omactuo.com</a></li>
-                            </ul>
-                        </div>
+    <div class="row footer-widget-wrapper">
+        
+        <div class="col-lg-4 col-md-6 col-sm-6 footer-widget mb-4 mb-lg-0">
+            <div class="footer-widget__logo mb-30">
+                <a href="index.php" style="color: #FF5F1F; font-size: 26px; font-weight: 800; text-decoration: none; letter-spacing: 0.5px; text-transform: uppercase;">
+                    omactuo
+                </a>
+            </div>
+            <ul class="footer-widget__list">
+                <li style="margin-bottom: 10px;">OM Technomation - End-to-end industrial automation and engineering solutions.</li>
+                <li style="margin-bottom: 10px;"><a href="mailto:info@omactuo.com" class="hover-style-link">info@omactuo.com</a></li>
+                <li style="margin-bottom: 10px;"><a href="tel:+919409944101" class="hover-style-link text-black font-weight--bold">+91 9409944101</a></li>
+                <li><a href="https://omactuo.com/" class="hover-style-link" style="color: #FF5F1F;">www.omactuo.com</a></li>
+            </ul>
+        </div>
 
-                        <div class="col-lg-2 col-md-4 col-sm-6 footer-widget">
-                            <h6 class="footer-widget__title mb-20">Quick Links</h6>
-                            <ul class="footer-widget__list">
-                                <li><a href="index.php" class="hover-style-link">Home</a></li>
-                                <li><a href="about-us.php" class="hover-style-link">About Us</a></li>
-                                <li><a href="products.php" class="hover-style-link">Product Catalogue</a></li>
-                                <li><a href="services.php" class="hover-style-link">Our Services</a></li>
-                                <li><a href="contact-us.php" class="hover-style-link">Contact Us</a></li>
-                            </ul>
-                        </div>
+        <div class="col-lg-2 col-md-6 col-sm-6 footer-widget mb-4 mb-lg-0">
+            <h6 class="footer-widget__title mb-20">Quick Links</h6>
+            <ul class="footer-widget__list">
+                <li><a href="index.php" class="hover-style-link">Home</a></li>
+                <li><a href="about-us.php" class="hover-style-link">About Us</a></li>
+                <li><a href="products.php" class="hover-style-link">Product Catalogue</a></li>
+                <li><a href="services.php" class="hover-style-link">Our Services</a></li>
+                <li><a href="contact-us.php" class="hover-style-link">Contact Us</a></li>
+            </ul>
+        </div>
 
-                        <div class="col-lg-2 col-md-4 col-sm-6 footer-widget">
-                            <h6 class="footer-widget__title mb-20">Our Services</h6>
-                            <ul class="footer-widget__list">
-                                <li><a href="services.php" class="hover-style-link">Industrial Automation</a></li>
-                                <li><a href="services.php" class="hover-style-link">PLC Programming</a></li>
-                                <li><a href="services.php" class="hover-style-link">Plant Maintenance</a></li>
-                                <li><a href="services.php" class="hover-style-link">Custom Engineering</a></li>
-                                <li><a href="services.php" class="hover-style-link">Hardware Installation</a></li>
-                            </ul>
-                        </div>
+        <div class="col-lg-4 col-md-6 col-sm-6 footer-widget mb-4 mb-lg-0">
+            <h6 class="footer-widget__title mb-20">Our Services</h6>
+            <ul class="footer-widget__list">
+                <li><a href="services.php" class="hover-style-link">Automation & Robotics</a></li>
+                <li><a href="services.php" class="hover-style-link">Product Development & R&D</a></li>
+                <li><a href="services.php" class="hover-style-link">Special Purpose Machines</a></li>
+                <li><a href="services.php" class="hover-style-link">Embedded Systems & IoT</a></li>
+                <li><a href="services.php" class="hover-style-link">CAD/CAM & Prototyping</a></li>
+                <li><a href="services.php" class="hover-style-link">Reverse Engineering</a></li>
+                <li><a href="services.php" class="hover-style-link">Engineering Consulting</a></li>
+            </ul>
+        </div>
 
-                        <div class="col-lg-2 col-md-4 col-sm-6 footer-widget">
-                            <h6 class="footer-widget__title mb-20">Support</h6>
-                            <ul class="footer-widget__list">
-                                <li><a href="contact-us.php" class="hover-style-link">Get a Quote</a></li>
-                                <li><a href="contact-us.php" class="hover-style-link">Help & FAQs</a></li>
-                                <li><a href="#" class="hover-style-link">Privacy Policy</a></li>
-                                <li><a href="#" class="hover-style-link">Terms & Conditions</a></li>
-                            </ul>
-                        </div>
-                        
-                    </div>
-                </div>
+    
+        
+    </div>
+</div>
             </div>
             <div class="footer-copyright-area section-space--pb_30">
                 <div class="container">

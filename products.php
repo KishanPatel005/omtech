@@ -2,7 +2,8 @@
 
     <div id="main-wrapper">
         <div class="site-wrapper-reveal">
-        
+        <br><br>
+
             <!-- Top Bar (Utility & Control) -->
             <div class="top-bar section-space--ptb_20" style="border-bottom: 1px solid #eaeaea;">
                 <div class="container-fluid">
@@ -11,7 +12,7 @@
                             <div class="search-container text-center" style="margin-top: 15px;margin-bottom:15px">
                                 <form action="products.php" method="GET" class="search-form position-relative mx-auto" style="max-width: 750px;">
                                     <input type="text" name="search" class="form-control border-dark shadow-sm" style="border-radius: 30px; padding: 15px 30px; font-size: 17px; background: #fff;" placeholder="Search for automation products..." value="<?php echo $_GET['search'] ?? ''; ?>">
-                                    <button type="submit" class="search-btn position-absolute" style="right: 6px; top: 6px; bottom: 6px; border: none; background: #00356b; color: white; padding: 0 30px; border-radius: 25px; transition: all 0.3s ease;">
+                                    <button type="submit" class="search-btn position-absolute" style="right: 6px; top: 6px; bottom: 6px; border: none; background: #FF5F1F; color: white; padding: 0 30px; border-radius: 25px; transition: all 0.3s ease;">
                                         <i class="fas fa-search me-2"></i> 
                                     </button>
                                 </form>
@@ -91,11 +92,11 @@
                                     <style>
                                         .sidebar-wrap::-webkit-scrollbar { width: 5px; }
                                         .sidebar-wrap::-webkit-scrollbar-track { background: #f1f1f1; }
-                                        .sidebar-wrap::-webkit-scrollbar-thumb { background: #00356b; border-radius: 10px; }
+                                        .sidebar-wrap::-webkit-scrollbar-thumb { background: #FF5F1F; border-radius: 10px; }
                                         .category-list, .category-list ul { list-style: none; padding-left: 0; }
                                         .cat-header { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #f0f0f0; }
                                         .cat-link { color: #333; font-weight: 500; text-decoration: none; flex-grow: 1; }
-                                        .toggle-icon { cursor: pointer; padding: 5px 10px; color: #00356b; transition: transform 0.3s; }
+                                        .toggle-icon { cursor: pointer; padding: 5px 10px; color: #FF5F1F; transition: transform 0.3s; }
                                         .cat-item.active > .cat-header .toggle-icon i:before { content: "\f068"; } /* Minus icon */
                                         .cat-item.active > .children { display: block !important; }
                                         .children li { padding-left: 15px; }
@@ -122,7 +123,7 @@
                                                     <input type="number" name="max_price" class="form-control form-control-sm" placeholder="Max" value="<?php echo $_GET['max_price'] ?? ''; ?>">
                                                 </div>
                                             </div>
-                                            <button type="submit" class="btn btn-primary btn-sm w-100" style="background: #00356b;">Apply Filter</button>
+                                            <button type="submit" class="btn btn-primary btn-sm w-100" style="background: #FF5F1F;">Apply Filter</button>
                                         </form>
                                     </div>
                                 </div>
@@ -135,7 +136,7 @@
                                         <?php
                                         $brands_query = mysqli_query($con, "SELECT DISTINCT brand_name FROM products WHERE brand_name IS NOT NULL AND brand_name != '' AND status = 'active'");
                                         while ($b = mysqli_fetch_assoc($brands_query)) {
-                                            $active_class = (isset($_GET['brand']) && $_GET['brand'] == $b['brand_name']) ? 'style="color: #00356b; font-weight: bold;"' : '';
+                                            $active_class = (isset($_GET['brand']) && $_GET['brand'] == $b['brand_name']) ? 'style="color: #FF5F1F; font-weight: bold;"' : '';
                                             $url = "products.php?brand=" . urlencode($b['brand_name']);
                                             if(isset($_GET['cat'])) $url .= "&cat=".$_GET['cat'];
                                             echo '<li><a href="'.$url.'" '.$active_class.'>' . htmlspecialchars($b['brand_name']) . '</a></li>';
@@ -196,7 +197,7 @@
                                                         <input type="number" name="max_price" class="form-control" placeholder="100000" value="<?php echo $_GET['max_price'] ?? ''; ?>">
                                                     </div>
                                                     <div class="col-12 mt-3">
-                                                        <button type="submit" class="btn btn-primary w-100" style="background: #00356b;">Apply Price Filter</button>
+                                                        <button type="submit" class="btn btn-primary w-100" style="background: #FF5F1F;">Apply Price Filter</button>
                                                     </div>
                                                 </div>
                                             </form>
@@ -352,7 +353,7 @@
                                                             <?php if (isset($prod['mrp']) && $prod['mrp'] > $prod['price']): ?>
                                                                 <span class="mrp-val mr-2 text-muted" style="text-decoration: line-through; font-size: 13px;">Rs. <?php echo number_format($prod['mrp'], 2); ?></span>
                                                             <?php endif; ?>
-                                                            <div class="current-price-val d-inline-block" style="font-weight: 800; font-size: 16px; color: #00356b;">Rs. <?php echo number_format($prod['price'], 2); ?></div>
+                                                            <div class="current-price-val d-inline-block" style="font-weight: 800; font-size: 16px; color: #FF5F1F;">Rs. <?php echo number_format($prod['price'], 2); ?></div>
                                                         </div>
 
                                                         <!-- Quantity Selector -->
@@ -367,12 +368,12 @@
                                                         <div class="grid-actions-group">
                                                             <div class="row g-2">
                                                                 <div class="col-12">
-                                                                    <button class="btn btn-primary btn-sm w-100 py-2 d-flex align-items-center justify-content-center gap-2" style="background: #00356b; border: none; font-size: 11px; font-weight: 700; border-radius: 6px;" onclick="addToCart({id: <?php echo $prod['id']; ?>, title: '<?php echo addslashes($prod['product_name']); ?>', sku: '<?php echo addslashes($prod['sku']); ?>', price: <?php echo $prod['price']; ?>, image: '<?php echo $prod['image1']; ?>', qty: this.closest('.product-details-content').querySelector('.quantity-number').value})">
+                                                                    <button class="btn btn-primary btn-sm w-100 py-2 d-flex align-items-center justify-content-center gap-2" style="background: #FF5F1F; border: none; font-size: 11px; font-weight: 700; border-radius: 6px;" onclick="addToCart({id: <?php echo $prod['id']; ?>, title: '<?php echo addslashes($prod['product_name']); ?>', sku: '<?php echo addslashes($prod['sku']); ?>', price: <?php echo $prod['price']; ?>, image: '<?php echo $prod['image1']; ?>', qty: this.closest('.product-details-content').querySelector('.quantity-number').value})">
                                                                         <i class="fas fa-shopping-cart"></i> ADD TO CART
                                                                     </button>
                                                                 </div>
                                                                 <div class="col-12">
-                                                                    <a href="product-details.php?id=<?php echo $prod['id']; ?>" class="btn btn-warning btn-sm w-100 py-2 d-flex align-items-center justify-content-center gap-2" style="background: #ff9f00; color: #fff; border: none; font-size: 11px; font-weight: 700; border-radius: 6px;">
+                                                                    <a href="product-details.php?id=<?php echo $prod['id']; ?>" class="btn btn-warning btn-sm w-100 py-2 d-flex align-items-center justify-content-center gap-2" style="background: #0B0B45; color: #fff; border: none; font-size: 11px; font-weight: 700; border-radius: 6px;">
                                                                         <i class="fas fa-bolt"></i> BUY NOW
                                                                     </a>
                                                                 </div>
@@ -390,8 +391,8 @@
                                 </div>
                             </div>
                             <style>
-                                .hover-blue:hover { color: #00356b !important; }
-                                .product-grid-card:hover { transform: translateY(-5px); box-shadow: 0 8px 24px rgba(0,0,0,0.08) !important; border-color: #00356b !important; }
+                                .hover-blue:hover { color: #FF5F1F !important; }
+                                .product-grid-card:hover { transform: translateY(-5px); box-shadow: 0 8px 24px rgba(0,0,0,0.08) !important; border-color: #FF5F1F !important; }
                             </style>
                             
                             <!-- Pagination -->
@@ -438,10 +439,10 @@
         .product-row:hover {
             box-shadow: 0 14px 28px rgba(0,0,0,0.05), 0 10px 10px rgba(0,0,0,0.02);
             transform: translateY(-2px);
-            border-color: #00356b !important;
+            border-color: #FF5F1F !important;
         }
         .add-to-cart-btn {
-            background-color: #00356b !important;
+            background-color: #FF5F1F !important;
             color: #fff !important;
             border: none !important;
             border-radius: 8px !important;
@@ -451,19 +452,19 @@
             font-size: 13px;
             letter-spacing: 0.5px;
             transition: all 0.3s ease !important;
-            box-shadow: 0 4px 15px rgba(0, 53, 107, 0.15);
+            box-shadow: 0 4px 15px rgba(11, 11, 69, 0.15);
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
         }
         .add-to-cart-btn:hover {
-            background-color: #002a52 !important;
+            background-color: #0B0B45 !important;
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 53, 107, 0.25);
+            box-shadow: 0 6px 20px rgba(11, 11, 69, 0.25);
         }
-        .btn-buy-now {
-            background-color: #ff9f00 !important;
+.btn-buy-now {
+            background-color: #0B0B45 !important;
             color: #fff !important;
             border: none !important;
             border-radius: 8px !important;
@@ -473,20 +474,20 @@
             font-size: 13px;
             letter-spacing: 0.5px;
             transition: all 0.3s ease !important;
-            box-shadow: 0 4px 15px rgba(255, 159, 0, 0.15);
+            box-shadow: 0 4px 15px rgba(11, 11, 69, 0.15);
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
         }
         .btn-buy-now:hover {
-            background-color: #e68a00 !important;
+            background-color: #0B0B45 !important;
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 159, 0, 0.25);
+            box-shadow: 0 6px 20px rgba(11, 11, 69, 0.25);
             color: #fff !important;
         }
         .quantity-input {
-            border: 2px solid #00356b !important;
+            border: 2px solid #FF5F1F !important;
             border-radius: 8px !important;
             overflow: hidden;
             background: #fff;
@@ -494,7 +495,7 @@
             align-items: center;
         }
         .quantity-input .qty-btn {
-            background: #00356b !important;
+            background: #FF5F1F !important;
             color: #fff !important;
             border: none !important;
             width: 32px;
@@ -508,7 +509,7 @@
             text-decoration: none !important;
         }
         .quantity-input .qty-btn:hover {
-            background: #002a52 !important;
+            background: #0B0B45 !important;
         }
         .quantity-number {
             width: 45px;
@@ -520,7 +521,7 @@
         }
         .current-price {
             font-weight: 700;
-            color: #00356b !important;
+            color: #FF5F1F !important;
         }
         .product-title a {
             color: #333;
@@ -528,7 +529,7 @@
             font-size: 18px;
         }
         .product-title a:hover {
-            color: #00356b;
+            color: #FF5F1F;
         }
         
         /* Updated Sidebar Styling */
@@ -548,7 +549,7 @@
             font-weight: 700;
             margin-bottom: 20px;
             padding-bottom: 10px;
-            border-bottom: 2px solid #00356b;
+            border-bottom: 2px solid #FF5F1F;
             color: #333;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -570,7 +571,7 @@
             font-size: 15px;
         }
         .category-list li a:hover, .brand-list li a:hover {
-            color: #00356b;
+            color: #FF5F1F;
             padding-left: 5px;
         }
         .children {
@@ -673,9 +674,9 @@
         
         .filter-category-item.active {
             background: #fff;
-            color: #00356b;
+            color: #FF5F1F;
             font-weight: 600;
-            border-left: 3px solid #00356b;
+            border-left: 3px solid #FF5F1F;
         }
         
         .filter-options {
@@ -702,13 +703,13 @@
         }
         
         .filter-pill:hover {
-            border-color: #00356b;
-            color: #00356b;
+            border-color: #FF5F1F;
+            color: #FF5F1F;
         }
         
         .filter-pill.selected {
-            background: #00356b;
-            border-color: #00356b;
+            background: #FF5F1F;
+            border-color: #FF5F1F;
             color: #fff;
         }
         
@@ -720,8 +721,8 @@
         }
         
         .filter-apply-btn {
-            background-color: #00356b !important;
-            border-color: #00356b !important;
+            background-color: #FF5F1F !important;
+            border-color: #FF5F1F !important;
             padding: 14px 24px;
             font-size: 16px;
             font-weight: 600;
@@ -729,8 +730,8 @@
         }
         
         .filter-apply-btn:hover {
-            background-color: #002a52 !important;
-            border-color: #002a52 !important;
+            background-color: #0B0B45 !important;
+            border-color: #0B0B45 !important;
         }
         
         body.filter-open {

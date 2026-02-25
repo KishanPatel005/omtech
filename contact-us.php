@@ -90,28 +90,28 @@
         </div>
         <div class="row">
             <div class="col-lg-4 col-md-6">
-                <div class="conact-info-wrap mt-30 text-center" style="background: #f8faff; padding: 30px; border-radius: 10px; border-bottom: 3px solid #00356b; height: 100%;">
-                    <h5 class="heading mb-10" style="color: #00356b; font-weight: 700;">SANDIP ENGG</h5>
+                <div class="conact-info-wrap mt-30 text-center" style="background: #f8faff; padding: 30px; border-radius: 10px; border-bottom: 3px solid #FF5F1F; height: 100%;">
+                    <h5 class="heading mb-10" style="color: #FF5F1F; font-weight: 700;">SANDIP ENGG</h5>
                     <div class="info-text" style="font-size: 14px; color: #555;">
-                        <p class="mb-5">VATVA, ABAD</p>
+                        <p class="mb-5">VATVA, Ahmedabad</p>
                         <p class="font-weight--bold" style="color: #333;">Since 1988</p>
                     </div>
                 </div>
             </div>
 
             <div class="col-lg-4 col-md-6">
-                <div class="conact-info-wrap mt-30 text-center" style="background: #f8faff; padding: 30px; border-radius: 10px; border-bottom: 3px solid #00356b; height: 100%;">
-                    <h5 class="heading mb-10" style="color: #00356b; font-weight: 700;">SUREKHA ENGG</h5>
+                <div class="conact-info-wrap mt-30 text-center" style="background: #f8faff; padding: 30px; border-radius: 10px; border-bottom: 3px solid #FF5F1F; height: 100%;">
+                    <h5 class="heading mb-10" style="color: #FF5F1F; font-weight: 700;">SUREKHA ENGG</h5>
                     <div class="info-text" style="font-size: 14px; color: #555;">
-                        <p class="mb-5">VATVA, ABAD</p>
+                        <p class="mb-5">VATVA, Ahmedabad</p>
                         <p class="font-weight--bold" style="color: #333;">Since 1974</p>
                     </div>
                 </div>
             </div>
 
             <div class="col-lg-4 col-md-6">
-                <div class="conact-info-wrap mt-30 text-center" style="background: #f8faff; padding: 30px; border-radius: 10px; border-bottom: 3px solid #00356b; height: 100%;">
-                    <h5 class="heading mb-10" style="color: #00356b; font-weight: 700;">CLIMAX ENGG</h5>
+                <div class="conact-info-wrap mt-30 text-center" style="background: #f8faff; padding: 30px; border-radius: 10px; border-bottom: 3px solid #FF5F1F; height: 100%;">
+                    <h5 class="heading mb-10" style="color: #FF5F1F; font-weight: 700;">CLIMAX ENGG</h5>
                     <div class="info-text" style="font-size: 14px; color: #555;">
                         <p class="mb-5">MITHA, MEHSANA</p>
                         <p class="font-weight--bold" style="color: #333;">Since 2022</p>
@@ -130,23 +130,33 @@
 
 
             <!--========== Call to Action Area Start ============-->
-            <div class="cta-image-area_one section-space--ptb_80 cta-bg-image_two">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-xl-8 col-lg-7">
-                            <div class="cta-content md-text-center">
-                                <h3 class="heading">We run all kinds of IT services that vow your <span class="text-color-primary"> success</span></h3>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-5">
-                            <div class="cta-button-group--two text-center">
-                                <a href="#" class="btn btn--white btn-one"><span class="btn-icon me-2"><i class="far fa-comment-alt"></i></span> Let's talk</a>
-                                <a href="#" class="btn btn--secondary btn-two "><span class="btn-icon me-2"><i class="fas fa-info-circle"></i></span> Get info</a>
-                            </div>
-                        </div>
+         <div class="contact-us-section-wrappaer infotechno-contact-us-bg section-space--ptb_120">
+    <div class="container">
+        <div class="row align-items-center">
+            
+            <div class="col-lg-6">
+                <div class="conact-us-wrap-one">
+                    <h3 class="heading">Optimize your production by <span class="text-color-primary">partnering</span> with our engineering experts. </h3>
+                    <div class="sub-heading">We are ready to tackle your toughest industrial challenges.<br>Contact us for a detailed feasibility analysis, system assessment, or custom automation quote.</div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="contact-info-one text-center">
+                    <div class="icon">
+                        <span class="fas fa-phone"></span>
+                    </div>
+                    <h6 class="heading font-weight--reguler">Call our technical team!</h6>
+                    <h2 class="call-us"><a href="tel:+919409944101">+91 9409944101</a></h2>
+                    <div class="contact-us-button mt-20">
+                        <a href="contact-us.php" class="btn btn--secondary">Get a Quote</a>
                     </div>
                 </div>
             </div>
+            
+        </div>
+    </div>
+</div>
             <!--========== Call to Action Area End ============-->
 
 

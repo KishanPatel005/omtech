@@ -66,7 +66,7 @@
     </div>
 
     <!--====================  header area ====================-->
-    <div class="header-area header-area--default">
+    <div class="header-area header-area--default" style="background-color: #FFFFFF;">
 
         <!-- Header Top Wrap Start -->
         <?php 
@@ -75,17 +75,69 @@
         $tag_data = mysqli_fetch_assoc($tag_res);
         $tag_content = isset($tag_data['content']) ? $tag_data['content'] : 'Now Hiring: Are you a driven and motivated 1st Line IT Support Engineer?';
         ?>
-<div class="header-top-wrap border-bottom">
+<div class="header-top-wrap border-bottom" style="background-color: #0B0B45;">
   <div class="container-fluid">
     <div class="row">
       <div class="col-lg-12">
-        <p class="text-center top-message">
-          <?php echo $tag_content; ?>
-        </p>
+        <style>
+    .marquee-wrapper {
+        width: 100%;
+        overflow: hidden;
+        background-color: #0B0B45; /* OM Technomation Navy */
+        color: #FFFFFF;
+        display: flex;
+    }
+
+    .marquee-track {
+        display: flex;
+        /* width: max-content forces the track to be as wide as it needs to be without wrapping */
+        width: max-content;
+        animation: scroll-text 20s linear infinite;
+    }
+
+    .marquee-track:hover {
+        animation-play-state: paused;
+    }
+
+    .marquee-item {
+        padding: 10px 50px;
+        margin: 0;
+        font-size: 15px;
+        font-weight: 500;
+        white-space: nowrap;
+    }
+
+    /* Because the track has two identical halves, sliding exactly 50% creates a mathematically perfect loop */
+    @keyframes scroll-text {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+</style>
+
+<div class="marquee-wrapper">
+    <div class="marquee-track">
+        
+        <div style="display: flex;">
+            <p class="marquee-item"><?php echo $tag_content; ?></p>
+            <p class="marquee-item"><?php echo $tag_content; ?></p>
+            <p class="marquee-item"><?php echo $tag_content; ?></p>
+            <p class="marquee-item"><?php echo $tag_content; ?></p>
+        </div>
+        
+        <div style="display: flex;">
+            <p class="marquee-item"><?php echo $tag_content; ?></p>
+            <p class="marquee-item"><?php echo $tag_content; ?></p>
+            <p class="marquee-item"><?php echo $tag_content; ?></p>
+            <p class="marquee-item"><?php echo $tag_content; ?></p>
+        </div>
+
+    </div>
+</div>
       </div>
     </div>
   </div>
-</div>        <!-- Header Top Wrap End -->
+</div>
+    <!-- Header Top Wrap End -->
 <style>
     body {
         font-size: 95% !important;
@@ -102,6 +154,26 @@
   word-break: break-word;
   white-space: normal;
 }
+
+/* Marquee Animation */
+.top-message-wrapper {
+    overflow: hidden;
+}
+.top-message {
+    white-space: nowrap;
+    animation: slide-left 20s linear infinite;
+}
+.top-message:hover {
+    animation-play-state: paused;
+}
+@keyframes slide-left {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
 </style>
 
         <!-- Header Bottom Wrap Start -->
@@ -113,7 +185,7 @@
 
                             <!-- brand logo -->
                             <div class="header__logo">
-                               <a href="index.php" style="color: #086AD8; font-size: 26px; font-weight: 800; text-decoration: none; letter-spacing: 0.5px; text-transform: uppercase;">
+                               <a href="index.php" style="color: #0B0B45; font-size: 26px; font-weight: 800; text-decoration: none; letter-spacing: 0.5px; text-transform: uppercase;">
                        omactuo                                </a>
                             </div>
 
@@ -137,7 +209,7 @@
                                                                 while($mcat = mysqli_fetch_assoc($mega_cats)):
                                                                 ?>
                                                                 <div class="mega-column" style="break-inside: avoid; display: inline-block; width: 100%; margin-bottom: 30px;">
-                                                                    <h6 class="page-list-title mb-10" style="font-weight: 700; color: #00356b;"><a href="products.php?cat=<?php echo $mcat['id']; ?>"><?php echo htmlspecialchars($mcat['category_name']); ?></a></h6>
+                                                                    <h6 class="page-list-title mb-10" style="font-weight: 700; color: #0B0B45;"><a href="products.php?cat=<?php echo $mcat['id']; ?>"><?php echo htmlspecialchars($mcat['category_name']); ?></a></h6>
                                                                     <ul class="mega-sub-menu" style="list-style: none; padding: 0;">
                                                                         <?php
                                                                         $mega_subs = mysqli_query($con, "SELECT * FROM sub_categories WHERE category_id = ".$mcat['id']." AND status = 'active' ORDER BY sub_category_name ASC");
@@ -297,14 +369,14 @@
         }
         
         .header-cart-icon:hover {
-            color: #00356b;
+            color: #0B0B45;
         }
         
-        .cart-count {
+.cart-count {
             position: absolute;
             top: 2px;
             right: 0;
-            background: #00356b;
+            background: #FF5F1F;
             color: #fff;
             font-size: 11px;
             font-weight: 600;
@@ -334,14 +406,14 @@
             visibility: visible;
         }
         
-        .cart-sidebar {
+.cart-sidebar {
             position: fixed;
             top: 0;
             right: -400px;
             width: 100%;
             max-width: 400px;
             height: 100%;
-            background: #fff;
+            background: #FFFFFF;
             z-index: 9999;
             transition: right 0.3s ease;
             display: flex;
@@ -353,13 +425,13 @@
             right: 0;
         }
         
-        .cart-sidebar-header {
+.cart-sidebar-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 25px;
             border-bottom: 1px solid #e0e0e0;
-            background: #f8f9fa;
+            background: #FFFFFF;
         }
         
         .cart-sidebar-header h5 {
@@ -436,7 +508,7 @@
         .cart-item-price {
             font-size: 15px;
             font-weight: 700;
-            color: #00356b;
+            color: #0B0B45;
         }
         
         .cart-item-qty {
@@ -461,8 +533,8 @@
         }
         
         .cart-qty-btn:hover {
-            border-color: #00356b;
-            color: #00356b;
+            border-color: #0B0B45;
+            color: #0B0B45;
         }
         
         .cart-qty-value {
@@ -503,12 +575,12 @@
         
         .cart-total-amount {
             font-size: 20px;
-            color: #00356b;
+            color: #0B0B45;
         }
         
-        .buy-now-btn {
-            background-color: #00356b !important;
-            border-color: #00356b !important;
+.buy-now-btn {
+            background-color: #FF5F1F !important;
+            border-color: #FF5F1F !important;
             padding: 14px 24px;
             font-size: 16px;
             font-weight: 600;
@@ -518,8 +590,13 @@
         }
         
         .buy-now-btn:hover {
-            background-color: #002a52 !important;
-            border-color: #002a52 !important;
+            background-color: #0B0B45 !important;
+            border-color: #0B0B45 !important;
+        }
+        
+        .buy-now-btn:hover {
+            background-color: #0B0B45 !important;
+            border-color: #0B0B45 !important;
         }
 
         .mobile-cart-icon {
@@ -550,13 +627,13 @@
         }
         .megamenu {
             background: #fff;
-            border-top: 2px solid #00356b;
+            border-top: 2px solid #0B0B45;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
             transform: translateX(-50%) translateY(20px) !important;
         }
         .mega-column a:hover {
-            color: #086AD8 !important;
+            color: #FF5F1F !important;
             padding-left: 5px;
         }
         .mega-column a {
@@ -571,7 +648,7 @@
             border: none;
         }
         #leadCaptureModal .modal-header {
-            background: linear-gradient(135deg, #00356b, #0056b3);
+            background: linear-gradient(135deg, #0B0B45, #0056b3);
             padding: 30px;
             border: none;
             display: block;
@@ -604,9 +681,9 @@
             transition: all 0.3s;
         }
         #leadCaptureModal .form-control:focus {
-            border-color: #00356b;
+            border-color: #0B0B45;
             background: #fff;
-            box-shadow: 0 0 0 3px rgba(0, 53, 107, 0.1);
+            box-shadow: 0 0 0 3px rgba(11, 11, 69, 0.1);
         }
         #leadCaptureModal .form-label {
             font-size: 13px;
@@ -615,7 +692,7 @@
             display: block;
         }
         #leadCaptureModal .btn-continue {
-            background: #00356b;
+            background: #0B0B45;
             border: none;
             border-radius: 8px;
             padding: 15px;
@@ -624,9 +701,9 @@
             transition: all 0.3s;
         }
         #leadCaptureModal .btn-continue:hover {
-            background: #002a52;
+            background: #0B0B45;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 53, 107, 0.3);
+            box-shadow: 0 5px 15px rgba(11, 11, 69, 0.3);
         }
 
         /* Sticky Contact Buttons */
@@ -663,7 +740,7 @@
             background-color: #25d366;
         }
         .call-btn {
-            background-color: #00356b;
+            background-color: #0B0B45;
         }
         .sticky-btn:hover {
             transform: scale(1.1);
@@ -759,16 +836,20 @@
 
     <!-- Floating Sticky Buttons -->
     <div class="sticky-contact-wrapper">
-        <a href="https://wa.me/919067600673" class="sticky-btn whatsapp-btn pulse-animation" target="_blank" title="WhatsApp Us">
+        <a href="https://wa.me/919409944101" class="sticky-btn whatsapp-btn pulse-animation" target="_blank" title="WhatsApp Us">
             <i class="fab fa-whatsapp"></i>
         </a>
-        <a href="tel:9067600673" class="sticky-btn call-btn" title="Call Us">
+        <a href="tel:+919409944101" class="sticky-btn call-btn" title="Call Us">
             <i class="fas fa-phone-alt"></i>
         </a>
     </div>
 
     <script>
-        let cart = [];
+        let cart = JSON.parse(localStorage.getItem('omtech_cart')) || [];
+        
+        function saveCart() {
+            localStorage.setItem('omtech_cart', JSON.stringify(cart));
+        }
         let customerCaptured = <?php echo isset($_SESSION['customer_info']) ? 'true' : 'false'; ?>;
         let pendingProduct = null;
         
@@ -792,7 +873,12 @@
                 console.error('Error fetching rates:', error);
             }
         }
-        initRates();
+        // Initialize display immediately
+        updateCartDisplay();
+        
+        initRates().then(() => {
+            updateCartDisplay();
+        });
 
         function openCartSidebar() {
             document.getElementById('cart-sidebar').classList.add('active');
@@ -847,6 +933,7 @@
             }
             
             updateCartDisplay();
+            saveCart();
             openCartSidebar();
         }
 
@@ -876,6 +963,7 @@
         function removeFromCart(productId) {
             cart = cart.filter(item => item.id !== productId);
             updateCartDisplay();
+            saveCart();
         }
         
         function updateQuantity(productId, change) {
@@ -886,6 +974,7 @@
                     removeFromCart(productId);
                 } else {
                     updateCartDisplay();
+                    saveCart();
                 }
             }
         }
@@ -897,6 +986,7 @@
                 if (isNaN(val) || val <= 0) val = 1;
                 item.qty = val;
                 updateCartDisplay();
+                saveCart();
             }
         }
         
@@ -971,7 +1061,7 @@
             message += `*Total Amount: ${total}*`;
             
             const encodedMessage = encodeURIComponent(message);
-            const whatsappNumber = "911234567890"; // Update with actual number if provided
+            const whatsappNumber = "919409944101"; // Update with actual number if provided
             window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
         }
         

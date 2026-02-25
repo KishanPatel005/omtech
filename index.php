@@ -250,179 +250,122 @@
             <div class="feature-images-wrapper bg-gray section-space--ptb_100">
                 <div class="container">
 
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <!-- section-title-wrap Start -->
-                            <div class="section-title-wrap text-center">
-                                <h6 class="section-sub-title mb-20">Our services</h6>
-                                <h3 class="heading">For your very specific industry, <br> we have <span class="text-color-primary"> highly-tailored IT solutions.</span></h3>
+                   <style>
+    /* Clean hover effect for the cards */
+    .om-service-card {
+        background: #ffffff !important;
+        box-shadow: 0 0 15px rgba(0,0,0,0.05);
+        border-radius: 8px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    }
+    .om-service-card:hover {
+        transform: translateY(-5px) !important;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.1) !important;
+    }
+    
+    /* Static Circular Arrow - NO HOVER EFFECT */
+    .om-static-circle-arrow a {
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        border: 2px solid #FF5F1F;
+        color: #FF5F1F !important;
+        font-size: 18px;
+        background: transparent !important;
+        text-decoration: none;
+        transition: none !important; /* Completely disables animation */
+    }
+    .om-static-circle-arrow a:hover {
+        transform: none !important;
+        color: #FF5F1F !important;
+        background: transparent !important;
+        box-shadow: none !important;
+    }
+</style>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="section-title-wrap text-center">
+            <h6 class="section-sub-title mb-20">Engineering & Automation Solutions</h6>
+            <h3 class="heading">For your specific industrial challenges, <br> <span class="text-color-primary">OM TECHNOMATION</span> builds highly-tailored automated systems.</h3>
+        </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-12">
+        <div class="feature-images__one">
+            <div class="row justify-content-center align-items-stretch">
+
+                <div class="col-lg-4 col-md-6 wow move-up mb-30">
+                    <div class="om-service-card text-center" style="padding: 40px 20px; height: 100%; display: flex; flex-direction: column;">
+                        <div class="image-box-wrap" style="height: 100%; display: flex; flex-direction: column;">
+                            <div class="box-icon mb-20">
+                                <i class="fas fa-robot" style="font-size: 55px; color: #FF5F1F;"></i>
                             </div>
-                            <!-- section-title-wrap Start -->
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="feature-images__one">
-                                <div class="row">
-
-                                    <div class="col-lg-4 col-md-6 wow move-up">
-                                        <!-- ht-box-icon Start -->
-                                        <div class="ht-box-images style-01">
-                                            <div class="image-box-wrap">
-                                                <div class="box-image">
-                                                    <img class="img-fulid" src="assets/images/icons/omactuo-box-image-style-01-image-01-100x108.webp" alt="">
-                                                </div>
-                                                <div class="content">
-                                                    <h5 class="heading">IT Design </h5>
-                                                    <div class="text">We provide the most responsive and functional IT design for companies and businesses worldwide.
-                                                    </div>
-                                                    <div class="circle-arrow">
-                                                        <div class="middle-dot"></div>
-                                                        <div class="middle-dot dot-2"></div>
-                                                        <a href="#">
-                                                            <i class="fas fa-arrow-right"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- ht-box-icon End -->
-                                    </div>
-
-                                    <div class="col-lg-4 col-md-6 wow move-up">
-                                        <!-- ht-box-icon Start -->
-                                        <div class="ht-box-images style-01">
-                                            <div class="image-box-wrap">
-                                                <div class="box-image">
-                                                    <img class="img-fulid" src="assets/images/icons/omactuo-box-image-style-01-image-02-100x108.webp" alt="">
-                                                </div>
-                                                <div class="content">
-                                                    <h5 class="heading">IT Management</h5>
-                                                    <div class="text">It's possible to simultaneously manage and transform information from one server to another.
-                                                    </div>
-                                                    <div class="circle-arrow">
-                                                        <div class="middle-dot"></div>
-                                                        <div class="middle-dot dot-2"></div>
-                                                        <a href="#">
-                                                            <i class="fas fa-arrow-right"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- ht-box-icon End -->
-                                    </div>
-
-                                    <div class="col-lg-4 col-md-6 wow move-up">
-                                        <!-- ht-box-icon Start -->
-                                        <div class="ht-box-images style-01">
-                                            <div class="image-box-wrap">
-                                                <div class="box-image">
-                                                    <img class="img-fulid" src="assets/images/icons/omactuo-box-image-style-01-image-03-100x108.webp" alt="">
-                                                </div>
-                                                <div class="content">
-                                                    <h5 class="heading">Data Security</h5>
-                                                    <div class="text">Back up your database, store in a safe and secure place while still maintaining its accessibility.
-                                                    </div>
-                                                    <div class="circle-arrow">
-                                                        <div class="middle-dot"></div>
-                                                        <div class="middle-dot dot-2"></div>
-                                                        <a href="#">
-                                                            <i class="fas fa-arrow-right"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- ht-box-icon End -->
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <div class="section-under-heading text-center section-space--mt_60 section-space--pt_30">Challenges are just opportunities in disguise. <a href="#">Take the challenge!</a></div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--===========  feature-images-wrapper  End =============-->
-
-            <!-- ============ Our Experience Wrapper Start =============== -->
-            <div class="section-space--ptb_100 infotechno-section-bg-01">
-
-                <div class="our-experience-wrapper">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-5">
-                                <div class="section-title small-mb__40 tablet-mb__40">
-                                    <h6 class="section-sub-title mb-20">Our company</h6>
-                                    <h3 class="heading">We've been thriving in <span class="text-color-primary">38 years</span></h3>
-                                    <p class="text mt-20">omactuo specializes in technological and IT-related services such as product engineering, warranty management, building cloud, infrastructure, network, etc. We put a strong focus on the needs of your business to figure out solutions that best fits your demand and nail it.</p>
-
-                                    <div class="sider-title-button-box mt-30">
-                                        <a href="#" class="ht-btn ht-btn-md">Join us now</a>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <div class="col-lg-5 offset-lg-2">
-                                <div class="ht-list style-auto-numbered-02">
-                                    <div class="list-item">
-                                        <a class="link" href="#">
-                                            <div class="list-header">
-                                                <div class="marker">
-                                                    01
-                                                </div>
-                                                <div class="title-wrap">
-                                                    <h6 class="title">How we can help your business? </h6>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="list-item">
-                                        <a class="link" href="#">
-                                            <div class="list-header">
-                                                <div class="marker">
-                                                    02
-                                                </div>
-                                                <div class="title-wrap">
-                                                    <h6 class="title">Why become our partner? </h6>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="list-item">
-                                        <a class="link" href="#">
-                                            <div class="list-header">
-                                                <div class="marker"> 03</div>
-                                                <div class="title-wrap">
-                                                    <h6 class="title"> What are the best of omactuo? </h6>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
+                            <div class="content" style="display: flex; flex-direction: column; flex-grow: 1;">
+                                <h5 class="heading mt-3" style="font-weight: 700;">Automation & Robotics</h5>
+                                <div class="text mt-15">Design and implementation of automated systems to improve productivity, precision, and operational efficiency. Includes robotic integration, motion control, and custom automation cells.</div>
+                                
+                                <div class="om-static-circle-arrow mt-auto pt-20" style="display: flex; justify-content: center;">
+                                    <a href="services.php"><i class="fas fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-       
+                <div class="col-lg-4 col-md-6 wow move-up mb-30">
+                    <div class="om-service-card text-center" style="padding: 40px 20px; height: 100%; display: flex; flex-direction: column;">
+                        <div class="image-box-wrap" style="height: 100%; display: flex; flex-direction: column;">
+                            <div class="box-icon mb-20">
+                                <i class="fas fa-microchip" style="font-size: 55px; color: #FF5F1F;"></i>
+                            </div>
+                            <div class="content" style="display: flex; flex-direction: column; flex-grow: 1;">
+                                <h5 class="heading mt-3" style="font-weight: 700;">Product Development & R&D</h5>
+                                <div class="text mt-15">End-to-end product engineering—from concept and feasibility to design, prototyping, testing, and production support. Focused on manufacturable and scalable solutions.</div>
+                                
+                                <div class="om-static-circle-arrow mt-auto pt-20" style="display: flex; justify-content: center;">
+                                    <a href="services.php"><i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 wow move-up mb-30">
+                    <div class="om-service-card text-center" style="padding: 40px 20px; height: 100%; display: flex; flex-direction: column;">
+                        <div class="image-box-wrap" style="height: 100%; display: flex; flex-direction: column;">
+                            <div class="box-icon mb-20">
+                                <i class="fas fa-cogs" style="font-size: 55px; color: #FF5F1F;"></i>
+                            </div>
+                            <div class="content" style="display: flex; flex-direction: column; flex-grow: 1;">
+                                <h5 class="heading mt-3" style="font-weight: 700;">Special Purpose Machines</h5>
+                                <div class="text mt-15">Custom-designed machines built for specific industrial tasks where standard equipment fails. Engineered for reliability, repeatability, and high throughput.</div>
+                                
+                                <div class="om-static-circle-arrow mt-auto pt-20" style="display: flex; justify-content: center;">
+                                    <a href="services.php"><i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
-            <!-- ============ Our Experience Wrapper End =============== -->
-            <!--=========== fun fact Wrapper Start ==========-->
-            
-            <!--=========== fun fact Wrapper End ==========-->
-            
+        </div>
+
+        <div class="section-under-heading text-center section-space--mt_60 section-space--pt_30">
+            <a href="services.php" class="ht-btn ht-btn-md" style="color: #ffffff !important; background-color: #FF5F1F !important; border: 1px solid #FF5F1F;">View All Services</a>
+        </div>
+
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
          
-            <!--=========== Infotechno Video Wrapper End ==========-->
-            <!--===========  Projects wrapper Start =============-->
- 
-            <!--===========  Projects wrapper End =============-->
 
             <!--====================  testimonial section ====================-->
             <!--====================  testimonial section Start ====================-->
@@ -617,32 +560,32 @@
             <!--====================  Blog Section End  ====================-->
             <!--====================  Conact us Section Start ====================-->
             <div class="contact-us-section-wrappaer infotechno-contact-us-bg section-space--ptb_120">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-6 col-lg-6">
-                            <div class="conact-us-wrap-one">
-                                <h3 class="heading">Obtaining further information by <span class="text-color-primary">make a contact</span> with our experienced IT staffs. </h3>
+    <div class="container">
+        <div class="row align-items-center">
+            
+            <div class="col-lg-6">
+                <div class="conact-us-wrap-one">
+                    <h3 class="heading">Optimize your production by <span class="text-color-primary">partnering</span> with our engineering experts. </h3>
+                    <div class="sub-heading">We are ready to tackle your toughest industrial challenges.<br>Contact us for a detailed feasibility analysis, system assessment, or custom automation quote.</div>
+                </div>
+            </div>
 
-                                <div class="sub-heading">We're available for 8 hours a day!<br>Contact to require a detailed analysis and assessment of your plan.</div>
-
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6 col-lg-6">
-                            <div class="contact-info-one text-center">
-                                <div class="icon">
-                                    <span class="fas fa-phone"></span>
-                                </div>
-                                <h6 class="heading font-weight--reguler">Reach out now!</h6>
-                                <h2 class="call-us"><a href="tel:190068668">1900 68668</a></h2>
-                                <div class="contact-us-button mt-20">
-                                    <a href="#" class="btn btn--secondary">Contact us</a>
-                                </div>
-                            </div>
-                        </div>
+            <div class="col-lg-6">
+                <div class="contact-info-one text-center">
+                    <div class="icon">
+                        <span class="fas fa-phone"></span>
+                    </div>
+                    <h6 class="heading font-weight--reguler">Call our technical team!</h6>
+                    <h2 class="call-us"><a href="tel:+919409944101">+91 9409944101</a></h2>
+                    <div class="contact-us-button mt-20">
+                        <a href="contact-us.php" class="btn btn--secondary">Get a Quote</a>
                     </div>
                 </div>
             </div>
+            
+        </div>
+    </div>
+</div>
             <!--====================  Conact us Section End  ====================-->
         </div>
     </div>

@@ -27,24 +27,24 @@ $prod = mysqli_fetch_assoc($prod_res);
                 .product-large-image { display: flex; justify-content: center; align-items: center; background: #f8f9fa; padding: 30px; border-radius: 8px; }
                 .product-large-image img { object-fit: contain; max-height: 500px; width: 100%; }
                 .product-thumbs .thumb-item { display: block; padding: 10px; background: #f8f9fa; border-radius: 8px; transition: all 0.3s ease; border: 2px solid transparent; }
-                .product-thumbs .thumb-item:hover { border-color: #00356b; }
-                .product-thumbs .thumb-item.active { border-color: #00356b; background: #fff; }
+                .product-thumbs .thumb-item:hover { border-color: #FF5F1F; }
+                .product-thumbs .thumb-item.active { border-color: #FF5F1F; background: #fff; }
                 .product-thumbs .thumb-item img { width: 100%; height: auto; object-fit: contain; }
                 .quantity-selector-wrapper { display: flex; align-items: center; gap: 15px; }
                 .quantity-label { font-weight: 600; color: #333; margin: 0; font-size: 15px; }
-                .quantity-input { display: flex; align-items: center; border: 2px solid #00356b; border-radius: 8px; overflow: hidden; background: #fff; }
-                .quantity-btn { width: 44px; height: 44px; border: none; background: #00356b; color: #fff; font-size: 18px; font-weight: 600; cursor: pointer; transition: all 0.2s ease; display: flex; align-items: center; justify-content: center; }
-                .quantity-btn:hover { background: #002a52; }
+                .quantity-input { display: flex; align-items: center; border: 2px solid #FF5F1F; border-radius: 8px; overflow: hidden; background: #fff; }
+                .quantity-btn { width: 44px; height: 44px; border: none; background: #FF5F1F; color: #fff; font-size: 18px; font-weight: 600; cursor: pointer; transition: all 0.2s ease; display: flex; align-items: center; justify-content: center; }
+                .quantity-btn:hover { background: #0B0B45; }
                 .quantity-btn:active { background: #001f3d; }
                 .quantity-number { width: 60px; height: 44px; border: none; text-align: center; font-size: 16px; font-weight: 600; color: #333; background: #fff; }
                 .quantity-number:focus { outline: none; }
                 .product-actions { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; margin-top: 30px; }
                 .action-btns { display: flex; gap: 15px; flex-grow: 1; }
                 .action-btns .btn { flex: 1; min-width: 160px; padding: 14px 24px; border-radius: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; gap: 10px; border: none; }
-                .btn-add-cart { background-color: #00356b; color: #fff; }
-                .btn-add-cart:hover { background-color: #002a52; transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0, 53, 107, 0.3); color: #fff; }
-                .btn-buy-now { background-color: #ff9f00; color: #fff; }
-                .btn-buy-now:hover { background-color: #e68a00; transform: translateY(-3px); box-shadow: 0 6px 20px rgba(255, 159, 0, 0.3); color: #fff; }
+                .btn-add-cart { background-color: #FF5F1F; color: #fff; }
+                
+.btn-buy-now { background-color: #0B0B45; color: #fff; }
+                .btn-buy-now:hover { background-color: #0B0B45; transform: translateY(-3px); box-shadow: 0 6px 20px rgba(11, 11, 69, 0.3); color: #fff; }
                 @media (max-width: 576px) { .action-btns { flex-direction: column; width: 100%; } .product-actions { gap: 15px; } .quantity-selector-wrapper { width: 100%; justify-content: space-between; } }
             </style>
         
@@ -55,10 +55,10 @@ $prod = mysqli_fetch_assoc($prod_res);
                         <div class="col-lg-12">
                             <div class="breadcrumb-list" style="background: #f8f9fa; padding: 15px 25px; border-radius: 8px; display: inline-block;">
                                 <ul style="list-style: none; padding: 0; margin: 0; display: flex; align-items: center; flex-wrap: wrap;">
-                                    <li style="display: flex; align-items: center;"><a href="index.php" style="color: #00356b; text-decoration: none; font-weight: 500; transition: all 0.2s;">Home</a><span style="margin: 0 12px; color: #999;">/</span></li>
-                                    <li style="display: flex; align-items: center;"><a href="products.php" style="color: #00356b; text-decoration: none; font-weight: 500; transition: all 0.2s;">Products</a><span style="margin: 0 12px; color: #999;">/</span></li>
+                                    <li style="display: flex; align-items: center;"><a href="index.php" style="color: #FF5F1F; text-decoration: none; font-weight: 500; transition: all 0.2s;">Home</a><span style="margin: 0 12px; color: #999;">/</span></li>
+                                    <li style="display: flex; align-items: center;"><a href="products.php" style="color: #FF5F1F; text-decoration: none; font-weight: 500; transition: all 0.2s;">Products</a><span style="margin: 0 12px; color: #999;">/</span></li>
                                     <?php if($prod['category_name']): ?>
-                                    <li style="display: flex; align-items: center;"><a href="products.php?cat=<?php echo $prod['category_id']; ?>" style="color: #00356b; text-decoration: none; font-weight: 500; transition: all 0.2s;"><?php echo htmlspecialchars($prod['category_name']); ?></a><span style="margin: 0 12px; color: #999;">/</span></li>
+                                    <li style="display: flex; align-items: center;"><a href="products.php?cat=<?php echo $prod['category_id']; ?>" style="color: #FF5F1F; text-decoration: none; font-weight: 500; transition: all 0.2s;"><?php echo htmlspecialchars($prod['category_name']); ?></a><span style="margin: 0 12px; color: #999;">/</span></li>
                                     <?php endif; ?>
                                     <li style="color: #555; font-weight: 600;"><?php echo htmlspecialchars($prod['product_name']); ?></li>
                                 </ul>
@@ -105,7 +105,7 @@ $prod = mysqli_fetch_assoc($prod_res);
                                     <span class="badge bg-light text-dark border">Brand: <?php echo htmlspecialchars($prod['brand_name']); ?></span>
                                 </div>
                                 <div class="product-price">
-                                    <span class="price" style="color: #00356b; font-weight: 800; font-size: 28px;">Rs. <?php echo number_format($prod['price'], 2); ?></span>
+                                    <span class="price" style="color: #FF5F1F; font-weight: 800; font-size: 28px;">Rs. <?php echo number_format($prod['price'], 2); ?></span>
                                 </div>
                                 
                                 <div class="product-short-description mt-30">
@@ -260,7 +260,7 @@ $prod = mysqli_fetch_assoc($prod_res);
                                                         </h6>
                                                         <div class="product-item__price text-primary fw-bold mb-3">$<?php echo number_format($rel['price'], 2); ?></div>
                                                         <div class="product-item__button-box">
-                                                            <button class="btn btn-primary btn-sm w-100" style="background-color: #00356b; border: none;"
+                                                            <button class="btn btn-primary btn-sm w-100" style="background-color: #FF5F1F; border: none;"
                                                                     onclick="addToCart({id: <?php echo $rel['id']; ?>, title: '<?php echo addslashes($rel['product_name']); ?>', sku: '<?php echo addslashes($rel['sku']); ?>', price: <?php echo $rel['price']; ?>, image: '<?php echo $rel['image1']; ?>'})">
                                                                 ADD TO CART
                                                             </button>
@@ -281,6 +281,33 @@ $prod = mysqli_fetch_assoc($prod_res);
                 </div> <!-- .container -->
             </div> <!-- .product-detail-wrapper -->
         </div> <!-- .site-wrapper-reveal -->
+        <div class="contact-us-section-wrappaer infotechno-contact-us-bg section-space--ptb_120">
+    <div class="container">
+        <div class="row align-items-center">
+            
+            <div class="col-lg-6">
+                <div class="conact-us-wrap-one">
+                    <h3 class="heading">Optimize your production by <span class="text-color-primary">partnering</span> with our engineering experts. </h3>
+                    <div class="sub-heading">We are ready to tackle your toughest industrial challenges.<br>Contact us for a detailed feasibility analysis, system assessment, or custom automation quote.</div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="contact-info-one text-center">
+                    <div class="icon">
+                        <span class="fas fa-phone"></span>
+                    </div>
+                    <h6 class="heading font-weight--reguler">Call our technical team!</h6>
+                    <h2 class="call-us"><a href="tel:+919409944101">+91 9409944101</a></h2>
+                    <div class="contact-us-button mt-20">
+                        <a href="contact-us.php" class="btn btn--secondary">Get a Quote</a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
     </div> <!-- #main-wrapper -->
 
     <script>
@@ -294,7 +321,7 @@ $prod = mysqli_fetch_assoc($prod_res);
             const qty = document.getElementById('product-qty').value;
             const productName = '<?php echo addslashes($prod['product_name']); ?>';
             const message = encodeURIComponent('Hi, I want to buy ' + productName + ' (Quantity: ' + qty + ')');
-            const whatsappUrl = 'https://wa.me/919067600673?text=' + message;
+            const whatsappUrl = 'https://wa.me/919409944101?text=' + message;
             
             // Optionally record the action before redirecting
             if (typeof addToCart === 'function') {
