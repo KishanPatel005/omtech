@@ -845,10 +845,14 @@
     </div>
 
     <script>
-        let cart = JSON.parse(localStorage.getItem('omtech_cart')) || [];
+        let cart = <?php echo json_encode(isset($_SESSION['omtech_cart']) ? $_SESSION['omtech_cart'] : []); ?>;
         
         function saveCart() {
-            localStorage.setItem('omtech_cart', JSON.stringify(cart));
+            fetch('ajax/sync_cart.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: 'cart=' + encodeURIComponent(JSON.stringify(cart))
+            });
         }
         let customerCaptured = <?php echo isset($_SESSION['customer_info']) ? 'true' : 'false'; ?>;
         let pendingProduct = null;
