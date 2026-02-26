@@ -305,7 +305,7 @@
                                             while($testi = mysqli_fetch_assoc($testi_res)):
                                         ?>
                                         <div class="swiper-slide list-item">
-                                            <div class="testimonial-slider__single" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; padding: 30px; background: #fff; border-radius: 5px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); margin-bottom: 30px;">
+                                            <div class="testimonial-slider__single" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; padding: 30px; background: #fff; border-radius: 5px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); margin-bottom: 30px; text-align: center;">
                                                 <div>
                                                     <div class="testimonial-rating mb-15">
                                                         <?php 
@@ -316,7 +316,7 @@
                                                     <h6 class="testimonial-subject mb-15"><?php echo htmlspecialchars($testi['subject']); ?></h6>
                                                     <div class="testimonial-slider__text"><?php echo htmlspecialchars($testi['content']); ?></div>
                                                 </div>
-                                                <div class="author-info mt-30" style="display: flex; align-items: center; gap: 15px;">
+                                                <div class="author-info mt-30" style="display: flex; flex-direction: column; align-items: center; gap: 15px;">
                                                     <div class="testimonial-slider__media">
                                                         <img src="<?php echo !empty($testi['image']) ? $testi['image'] : 'assets/images/testimonial/omactuo-testimonial-avata-04-70x70.webp'; ?>" class="img-fluid" alt="<?php echo htmlspecialchars($testi['name']); ?>" style="width: 70px; height: 70px; object-fit: cover; border-radius: 50%;">
                                                     </div>
@@ -333,13 +333,13 @@
                                             for($k=0; $k<3; $k++):
                                         ?>
                                         <div class="swiper-slide list-item">
-                                            <div class="testimonial-slider__single" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; padding: 30px; background: #fff; border-radius: 5px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); margin-bottom: 30px;">
+                                            <div class="testimonial-slider__single" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; padding: 30px; background: #fff; border-radius: 5px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); margin-bottom: 30px; text-align: center;">
                                                 <div>
                                                     <div class="testimonial-rating mb-15"><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i></div>
                                                     <h6 class="testimonial-subject mb-15">Quality industrial automation solutions</h6>
                                                     <div class="testimonial-slider__text">Omactuo has provided us with exceptional support and high-quality automation components.</div>
                                                 </div>
-                                                <div class="author-info mt-30" style="display: flex; align-items: center; gap: 15px;">
+                                                <div class="author-info mt-30" style="display: flex; flex-direction: column; align-items: center; gap: 15px;">
                                                     <div class="testimonial-slider__media"><img src="assets/images/testimonial/omactuo-testimonial-avata-04-70x70.webp" class="img-fluid" alt="" style="width: 70px; height: 70px; border-radius: 50%;"></div>
                                                     <div class="testimonial-slider__author"><h6 class="name" style="margin-bottom: 5px; font-weight: 700;">Industrial Partner</h6><span class="designation" style="font-size: 12px; color: #777;">OPERATIONS MANAGER</span></div>
                                                 </div>

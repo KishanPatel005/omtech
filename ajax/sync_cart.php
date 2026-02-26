@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
     
-    $_SESSION['omtech_cart'] = $cart_data;
+    $_SESSION['Omactuo_cart'] = $cart_data;
     echo json_encode(['status' => 'success']);
 } else {
     echo json_encode(['status' => 'error', 'message' => 'Invalid request']);

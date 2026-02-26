@@ -21,7 +21,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-                            Welcome to the Omtech Admin Panel.
+                            Welcome to the Omactuo Admin Panel.
                         </div>
                     </div>
                 </div>

@@ -119,7 +119,7 @@ $prod = mysqli_fetch_assoc($prod_res);
                                         <label class="quantity-label">Quantity:</label>
                                         <div class="quantity-input">
                                             <button class="quantity-btn quantity-decrease">-</button>
-                                            <input type="text" id="product-qty" value="1" class="quantity-number" readonly>
+                                            <input type="number" id="product-qty" value="1" class="quantity-number" min="1" oninput="validateQuantity(this)">
                                             <button class="quantity-btn quantity-increase">+</button>
                                         </div>
                                     </div>
@@ -337,6 +337,13 @@ $prod = mysqli_fetch_assoc($prod_res);
             
             // Redirect to WhatsApp
             window.open(whatsappUrl, '_blank');
+        }
+
+        function validateQuantity(element) {
+            let value = parseInt(element.value);
+            if (isNaN(value) || value < 1) {
+                element.value = 1;
+            }
         }
 
         document.querySelectorAll('.quantity-btn').forEach(button => {

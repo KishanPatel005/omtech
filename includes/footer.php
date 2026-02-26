@@ -5,8 +5,8 @@
         
         <div class="col-lg-4 col-md-6 col-sm-6 footer-widget mb-4 mb-lg-0">
             <div class="footer-widget__logo mb-30">
-                <a href="index.php" style="color: #FF5F1F; font-size: 26px; font-weight: 800; text-decoration: none; letter-spacing: 0.5px; text-transform: uppercase;">
-                    omactuo
+                <a href="index.php">
+                    <img src="uploads/logo.png" alt="OMACTUO Logo" style="height: 60px; width: auto;">
                 </a>
             </div>
             <ul class="footer-widget__list">
@@ -109,7 +109,7 @@
                             <!-- logo -->
                             <div class="logo">
                                 <a href="index.php">
-                                    <img src="assets/images/logo/logo-dark.webp" class="img-fluid" alt="">
+                                    <img src="uploads/logo.png" class="img-fluid" alt="OMACTUO Logo" style="height: 48px; width: auto;">
                                 </a>
                             </div>
                         </div>
@@ -349,6 +349,27 @@
             }
         });
     </script>
+
+    <style>
+        .htmx-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: #FF5F1F;
+            z-index: 10001;
+            transform: translateX(-100%);
+            transition: transform 0.4s ease-in-out;
+        }
+        .htmx-request.htmx-indicator {
+            transform: translateX(0);
+        }
+        .htmx-request .htmx-indicator {
+            transform: translateX(0);
+        }
+    </style>
+    <div class="htmx-indicator" id="loading-bar"></div>
 
     <?php include 'includes/popup.php'; ?>
 </body>

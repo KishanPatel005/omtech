@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="OMACTUO provides high-value automation parts, industrial engineering services, and smart manufacturing solutions to factories and businesses worldwide. Global automation technology leader." >
     <!-- Favicon -->
-    <link rel="icon" href="assets/images/favicon.webp">
+    <link rel="icon" href="uploads/logo.ico">
 
     <!-- CSS
         ============================================ -->
@@ -39,6 +39,9 @@
     
     <!-- Swiper JS -->
     <script src="assets/js/plugins/swiper.min.js"></script>
+    
+    <!-- HTMX for React-like SPA feel -->
+    <script src="https://unpkg.com/htmx.org@2.0.4"></script>
 
     <!-- Vendor & Plugins CSS (Please remove the comment from below vendor.min.css & plugins.min.css for better website load performance and remove css files from avobe) -->
 
@@ -50,12 +53,12 @@
 
 </head>
 
-<body>
+<body hx-boost="true">
 
 
 
 
-    <div class="preloader-activate preloader-active open_tm_preloader">
+    <!-- <div class="preloader-activate preloader-active open_tm_preloader">
         <div class="preloader-area-wrap">
             <div class="spinner d-flex justify-content-center align-items-center h-100">
                 <div class="bounce1"></div>
@@ -63,7 +66,7 @@
                 <div class="bounce3"></div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!--====================  header area ====================-->
     <div class="header-area header-area--default" style="background-color: #FFFFFF;">
@@ -184,9 +187,10 @@
                         <div class="header default-menu-style position-relative">
 
                             <!-- brand logo -->
-                            <div class="header__logo">
-                               <a href="index.php" style="color: #0B0B45; font-size: 26px; font-weight: 800; text-decoration: none; letter-spacing: 0.5px; text-transform: uppercase;">
-                       omactuo                                </a>
+                            <div class="header__logo" style="padding-top: 0px;padding-bottom: 0px;">
+                                <a href="index.php">
+                                    <img src="uploads/logo.png" alt="OMACTUO Logo" style="height: 60px;width: auto;">
+                                </a>
                             </div>
 
                             <!-- header midle box  -->
@@ -296,7 +300,7 @@
                             <!-- logo -->
                             <div class="logo">
                                 <a href="index.php">
-                                    <img src="assets/images/logo/logo-dark.webp" class="img-fluid" alt="">
+                                    <img src="uploads/logo.png" class="img-fluid" alt="OMACTUO Logo" style="height: 48px; width: auto;">
                                 </a>
                             </div>
                         </div>
@@ -845,7 +849,7 @@
     </div>
 
     <script>
-        let cart = <?php echo json_encode(isset($_SESSION['omtech_cart']) ? $_SESSION['omtech_cart'] : []); ?>;
+        let cart = <?php echo json_encode(isset($_SESSION['Omactuo_cart']) ? $_SESSION['Omactuo_cart'] : []); ?>;
         
         function saveCart() {
             fetch('ajax/sync_cart.php', {
@@ -1050,7 +1054,7 @@
                 return;
             }
             
-            let message = "Hello Omtech, I would like to order the following items:\n\n";
+            let message = "Hello Omactuo, I would like to order the following items:\n\n";
             const rate = window.exchangeRates[window.currentCurrency] || 1;
             const symbol = window.currencySymbols[window.currentCurrency];
 

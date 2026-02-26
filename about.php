@@ -23,13 +23,14 @@ $img3 = (!empty($about_data['image3'])) ? $about_data['image3'] : "https://place
         </div>
 </div>
 
-<div class="cybersecurity-about-box" style="margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); width: 100vw; max-width: 100vw; background: linear-gradient(rgba(245, 247, 250, 0.85), rgba(255, 255, 255, 0.95)), url('https://cgu-odisha.ac.in/wp-content/uploads/2023/05/mechatronics-engineering-jobs.jpg'); background-size: cover; background-position: center; background-attachment: fixed; min-height: auto; display: flex; align-items: center; padding: 100px 0;">
+<!-- <div class="cybersecurity-about-box" style="margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); width: 100vw; max-width: 100vw; background: linear-gradient(rgba(245, 247, 250, 0.85), rgba(255, 255, 255, 0.95)), url('assets/images/office.png'); background-size: cover; background-position: center; background-attachment: fixed; min-height: auto; display: flex; align-items: center; padding: 100px 0;"> -->
+    <div class="cybersecurity-about-box" style="margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); width: 100vw; max-width: 100vw; background: url('assets/images/office.png'); background-size: cover; background-position: center; background-attachment: fixed; min-height: auto; display: flex; align-items: center; padding: 100px 0;">
     <div class="container">
         <div class="row align-items-center">
             
             <div class="col-lg-5 text-center text-lg-start mb-5 mb-lg-0">
                 <div class="company-images-wrapper" style="position: relative; display: inline-block;">
-                    <img src="https://img.freepik.com/free-photo/close-up-portrait-handsome-smiling-young-man-white-t-shirt-blurry-outdoor-nature_176420-6305.jpg" alt="Er. OM S. PATEL - Founder" class="shadow-lg" style="width: 100%; max-width: 400px; aspect-ratio: 4/5; object-fit: cover; border-radius: 16px; border: 12px solid #ffffff;">
+                    <img src="./assets/images/om Patel.jpg" alt="Er. OM S. PATEL - Founder" class="shadow-lg" style="width: 100%; max-width: 400px; aspect-ratio: 4/5; object-fit: cover; border-radius: 16px; border: 12px solid #ffffff;">
                     
                     <div style="position: absolute; bottom: -20px; right: -20px; background: #FF5F1F; color: #fff; padding: 15px 25px; border-radius: 8px; box-shadow: 0 10px 20px rgba(8, 106, 216, 0.3); text-align: left;">
                         <h5 style="color: #fff; margin: 0; font-weight: 700; font-size: 18px;">Er. OM S. PATEL</h5>
